@@ -1,10 +1,11 @@
 import React from 'react';
 
-interface StoryCardProps {
+export interface StoryCardProps {
+  id?: string;
   number: string;
   title: string;
   description: string;
-  accentColor: string;
+  accentBarClass?: string;
   className?: string;
 }
 
@@ -12,37 +13,30 @@ export default function StoryCard({
   number,
   title,
   description,
-  accentColor,
+  accentBarClass = 'bg-primary',
   className = '',
 }: StoryCardProps) {
   return (
-    <article
-      className={`relative comic-panel p-8 flex flex-col justify-between min-h-[380px] group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden ${className}`}
+    <div
+      className={`bg-white border-2 border-stroke comic-shadow p-6 flex flex-col justify-between h-full relative hover:translate-x-0.5 hover:translate-y-0.5 transition-all cursor-pointer ${className}`}
+      role="article"
     >
-      {/* Large watermark number */}
-      <span
-        className="absolute top-2 right-4 font-heading font-extrabold text-[120px] leading-none text-gray-100 select-none pointer-events-none z-0 transition-colors duration-300 group-hover:text-gray-200"
-        aria-hidden="true"
-      >
+      {/* Large Watermark Number above card title */}
+      <div className="text-5xl md:text-[80px] font-body font-black text-stroke/5 absolute -top-16 select-none pointer-events-none">
         {number}
-      </span>
+      </div>
 
-      {/* Content */}
-      <div className="relative z-10">
-        <h3 className="font-heading font-bold text-xl uppercase leading-tight text-dark pr-12">
+      <div>
+        <h3 className="text-[32px] font-heading font-bold text-stroke uppercase leading-tight md:mb-24 mb-8 max-w-11/12">
           {title}
         </h3>
+        <p className="para-16 text-gray-500 font-normal!">
+          {description}
+        </p>
       </div>
 
-      <div className="relative z-10 mt-auto">
-        <p className="para-14 text-gray-600 mb-6">{description}</p>
-        {/* Colored accent line */}
-        <div
-          className="w-12 h-1 rounded-none"
-          style={{ backgroundColor: accentColor }}
-          aria-hidden="true"
-        />
-      </div>
-    </article>
+      {/* Bottom Accent Underline Bar */}
+      <div className={`w-12 h-1.5 border-2 border-stroke ${accentBarClass} mt-6`} aria-hidden="true" />
+    </div>
   );
 }

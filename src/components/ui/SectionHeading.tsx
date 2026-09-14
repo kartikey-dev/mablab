@@ -1,17 +1,21 @@
 import React from 'react';
 
-interface SectionHeadingProps {
-  text: string;
-  accentText: string;
-  accentColor?: 'primary' | 'danger';
+export interface SectionHeadingProps {
+  text?: string;
+  accentText?: string;
+  accentColor?: 'primary' | 'secondary' | 'danger' | 'cyan' | 'white' | string;
   className?: string;
   as?: 'h1' | 'h2' | 'h3';
   id?: string;
+  children?: React.ReactNode;
 }
 
-const colorMap = {
+const colorMap: Record<string, string> = {
   primary: 'text-primary',
+  secondary: 'text-secondary',
   danger: 'text-danger',
+  cyan: 'text-cyan-text',
+  white: 'text-white',
 };
 
 export default function SectionHeading({
@@ -21,14 +25,24 @@ export default function SectionHeading({
   className = '',
   as: Tag = 'h2',
   id,
+  children,
 }: SectionHeadingProps) {
+  const accentClass = colorMap[accentColor] || accentColor;
+
   return (
     <Tag
       id={id}
       className={`heading-mablab ${className}`}
     >
-      <span className="text-dark">{text}</span>{' '}
-      <span className={colorMap[accentColor]}>{accentText}</span>
+      {children ? (
+        children
+      ) : (
+        <>
+          {text && <span className="text-stroke">{text}</span>}
+          {text && accentText && ' '}
+          {accentText && <span className={accentClass}>{accentText}</span>}
+        </>
+      )}
     </Tag>
   );
 }

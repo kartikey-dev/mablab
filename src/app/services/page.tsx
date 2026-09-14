@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import SectionHeading from '@/components/ui/SectionHeading';
 import IconComponent, { ServiceIconName } from '@/components/ui/IconComponent';
+import Button from '@/components/ui/Button';
 import ContactSection from '@/components/sections/ContactSection';
 import { services } from '@/data/services';
 import { Metadata } from 'next';
@@ -24,9 +25,7 @@ export default function ServicesPage() {
           <span className="inline-block bg-primary text-yellow-300 para-12 px-3.5 py-1.5 border-2 border-stroke comic-shadow-sm mb-4">
             EXPERIMENTAL FORMULAS
           </span>
-          <h1 className="heading-mablab text-stroke mb-4">
-            OUR <span className="text-primary">SERVICES</span>
-          </h1>
+          <SectionHeading text="OUR" accentText="SERVICES" accentColor="primary" className="mb-4" />
           <p className="para-18 text-gray-600 max-w-2xl mx-auto font-normal">
             12 specialized scientific capabilities engineered to eliminate guesswork, outperform competitors, and scale business revenue.
           </p>
@@ -63,13 +62,9 @@ export default function ServicesPage() {
                 </div>
 
                 <div>
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 para-12 text-secondary hover:text-primary transition-colors"
-                  >
-                    <span>INITIATE FORMULA</span>
-                    <span>→</span>
-                  </a>
+                  <Button href="#contact" variant="ghost" size="sm" showArrow className="text-secondary! p-0!">
+                    INITIATE FORMULA
+                  </Button>
                 </div>
               </div>
             ))}

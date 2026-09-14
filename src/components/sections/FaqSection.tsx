@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
+import AccordionItem from '../ui/AccordionItem';
+import Button from '../ui/Button';
+import SectionHeading from '../ui/SectionHeading';
 import { faqItems } from '@/data/faq';
 
 export default function FaqSection() {
@@ -17,41 +19,26 @@ export default function FaqSection() {
 
         {/* Title: FREQUENTLY ANSWERED QUESTIONS */}
         <div className="text-center mb-8">
-          <h2 className="heading-mablab text-stroke">
-            FREQUENTLY ANSWERED <br />
-            <span className="text-primary">QUESTIONS</span>
-          </h2>
+          <SectionHeading
+            text="FREQUENTLY ANSWERED"
+            accentText="QUESTIONS"
+            accentColor="primary"
+            className="text-stroke"
+          />
         </div>
 
         {/* FAQ Accordion List */}
         <div className="max-w-3xl mx-auto space-y-6">
-          {faqItems.map((item) => {
-            const isOpen = openId === item.id;
-            return (
-              <div
-                key={item.id}
-                className="bg-white border-2 border-stroke comic-shadow transition-all"
-              >
-                <button
-                  onClick={() => handleToggle(item.id)}
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-answer-${item.id}`}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left para-16 text-stroke uppercase cursor-pointer"
-                >
-                  <span className='font-heading font-normal!'>{item.question}</span>
-                  <span className="w-6 h-6 border-2 border-stroke flex items-center justify-center text-danger font-bold ml-4 shrink-0" aria-hidden="true">
-                    {isOpen ? '-' : '+'}
-                  </span>
-                </button>
-
-                {isOpen && (
-                  <div id={`faq-answer-${item.id}`} className="px-6 pb-5 pt-1 text-gray-600 border-t border-gray-100 leading-relaxed font-normal! normal-case">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+          {faqItems.map((item) => (
+            <AccordionItem
+              key={item.id}
+              id={item.id}
+              question={item.question}
+              answer={item.answer}
+              isOpen={openId === item.id}
+              onToggle={handleToggle}
+            />
+          ))}
         </div>
 
         {/* Bottom Banner: LET'S TALK! Purple Banner */}
@@ -66,15 +53,18 @@ export default function FaqSection() {
           </div>
 
           <div>
-            <Link
+            <Button
               href="#contact"
-              className="inline-flex items-center gap-2 bg-white text-primary para-16 font-normal! px-12 py-6 border-2 border-stroke comic-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all whitespace-nowrap"
+              variant="white"
+              className="px-12! py-6! whitespace-nowrap"
+              icon={
+                <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 16V0L19 8L0 16ZM2 13L13.85 8L2 3V6.5L8 8L2 9.5V13ZM2 13V8V3V6.5V9.5V13Z" fill="currentColor" />
+                </svg>
+              }
             >
               LET&apos;S TALK!
-              <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 16V0L19 8L0 16ZM2 13L13.85 8L2 3V6.5L8 8L2 9.5V13ZM2 13V8V3V6.5V9.5V13Z" fill="currentColor" />
-              </svg>
-            </Link>
+            </Button>
           </div>
         </div>
 

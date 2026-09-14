@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import IconComponent, { ServiceIconName } from '../ui/IconComponent';
+import Button from '../ui/Button';
 import { services } from '@/data/services';
 
 export default function Header() {
@@ -91,12 +92,9 @@ export default function Header() {
 
           {/* Right CTA Button */}
           <div className="hidden md:block">
-            <Link
-              href="/contact"
-              className="inline-block bg-secondary text-white para-16 font-normal! px-6 py-2.5 border-2 border-stroke comic-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
-            >
+            <Button href="/contact" variant="secondary" size="md">
               Let&apos;s Talk!
-            </Link>
+            </Button>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -250,13 +248,14 @@ export default function Header() {
             >
               Our Stories
             </Link>
-            <Link
+            <Button
               href="/contact"
+              variant="secondary"
+              fullWidth
               onClick={() => setMobileMenuOpen(false)}
-              className="inline-block w-full text-center bg-secondary text-white para-16 px-6 py-3 border-2 border-stroke comic-shadow-sm"
             >
               Let&apos;s Talk!
-            </Link>
+            </Button>
           </div>
         )}
       </header>

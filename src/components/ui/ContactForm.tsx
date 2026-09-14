@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Button from './Button';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -87,16 +88,20 @@ export default function ContactForm() {
         onChange={handleChange}
       />
 
-      <button
+      <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-secondary text-white para-16 py-3.5 px-6 border-2 border-stroke comic-shadow font-normal! hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer mt-6"
+        variant="secondary"
+        fullWidth
+        className="mt-6 py-3.5 px-6 font-normal!"
+        icon={
+          <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 16V0L19 8L0 16ZM2 13L13.85 8L2 3V6.5L8 8L2 9.5V13ZM2 13V8V3V6.5V9.5V13Z" fill="white" />
+          </svg>
+        }
       >
-        {isSubmitting ? 'SENDING...' : (<>LET&apos;S TALK! <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 16V0L19 8L0 16ZM2 13L13.85 8L2 3V6.5L8 8L2 9.5V13ZM2 13V8V3V6.5V9.5V13Z" fill="white" />
-        </svg>
-        </>)}
-      </button>
+        {isSubmitting ? 'SENDING...' : "LET'S TALK!"}
+      </Button>
 
       {submitStatus === 'success' && (
         <p className="text-green-600 para-14 text-center mt-3">

@@ -12,7 +12,24 @@ export type ServiceIconName =
   | 'seo-paid-ads'
   | 'design'
   | 'events'
-  | 'marketing-consulting';
+  | 'marketing-consulting'
+  | 'groundwork'
+  | 'frameworks'
+  | 'guesswork'
+  | 'audience'
+  | 'problems'
+  | 'place'
+  | 'brand'
+  | 'decision'
+  | 'test'
+  | 'protect'
+  | 'brief'
+  | 'thunder'
+  | 'warning-triangle'
+  | 'mablab-seal'
+  | 'paper-plane'
+  | 'arrow-right'
+  | 'corner-arrow-down';
 
 interface IconComponentProps {
   name: ServiceIconName | string;
@@ -80,6 +97,99 @@ export default function IconComponent({ name, className = '' }: IconComponentPro
     'marketing-consulting': (
       <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
         <path d="M18.8393 0V24L26 19.114V3.334L18.8393 0ZM15.5088 18.758L9.74318 20.915V2.086L15.5088 3.548V18.758ZM2 18.205L6.41267 17.206V5.188L2.02101 4.582L2 18.205Z" fill="currentColor" />
+      </svg>
+    ),
+    groundwork: (
+      <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M5 22.485C4.0625 22.485 3.13542 22.2558 2.21875 21.7975C1.30208 21.3392 0.5625 20.735 0 19.985C0.541667 19.985 1.09375 19.7715 1.65625 19.3444C2.21875 18.9173 2.5 18.2975 2.5 17.485C2.5 16.4433 2.86458 15.5579 3.59375 14.8287C4.32292 14.0996 5.20833 13.735 6.25 13.735C7.29167 13.735 8.17708 14.0996 8.90625 14.8287C9.63542 15.5579 10 16.4433 10 17.485C10 18.86 9.51042 20.0371 8.53125 21.0163C7.55208 21.9954 6.375 22.485 5 22.485ZM5 19.985C5.6875 19.985 6.27604 19.7402 6.76562 19.2506C7.25521 18.761 7.5 18.1725 7.5 17.485C7.5 17.1308 7.38021 16.834 7.14062 16.5944C6.90104 16.3548 6.60417 16.235 6.25 16.235C5.89583 16.235 5.59896 16.3548 5.35938 16.5944C5.11979 16.834 5 17.1308 5 17.485C5 17.9642 4.94271 18.4017 4.82812 18.7975C4.71354 19.1933 4.5625 19.5683 4.375 19.9225C4.47917 19.9642 4.58333 19.985 4.6875 19.985C4.79167 19.985 4.89583 19.985 5 19.985ZM12.1875 14.985L8.75 11.5475L19.9375 0.36C20.1667 0.130833 20.4531 0.0110417 20.7969 0.000625C21.1406 -0.00979167 21.4375 0.11 21.6875 0.36L23.375 2.0475C23.625 2.2975 23.75 2.58917 23.75 2.9225C23.75 3.25583 23.625 3.5475 23.375 3.7975L12.1875 14.985Z" fill="currentColor" />
+      </svg>
+    ),
+    frameworks: (
+      <svg width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M0.3125 22.5L0 19.75L3.5625 9.9375C3.875 10.2292 4.21354 10.474 4.57812 10.6719C4.94271 10.8698 5.33333 11.0208 5.75 11.125L2.3125 20.5625L0.3125 22.5ZM13.4375 22.5L11.4375 20.5625L8 11.125C8.41667 11.0208 8.80729 10.8698 9.17188 10.6719C9.53646 10.474 9.875 10.2292 10.1875 9.9375L13.75 19.75L13.4375 22.5ZM6.875 10C5.83333 10 4.94792 9.63542 4.21875 8.90625C3.48958 8.17708 3.125 7.29167 3.125 6.25C3.125 5.4375 3.35938 4.71354 3.82812 4.07812C4.29688 3.44271 4.89583 3 5.625 2.75V0H8.125V2.75C8.85417 3 9.45312 3.44271 9.92188 4.07812C10.3906 4.71354 10.625 5.4375 10.625 6.25C10.625 7.29167 10.2604 8.17708 9.53125 8.90625C8.80208 9.63542 7.91667 10 6.875 10ZM6.875 7.5C7.22917 7.5 7.52604 7.38021 7.76562 7.14062C8.00521 6.90104 8.125 6.60417 8.125 6.25C8.125 5.89583 8.00521 5.59896 7.76562 5.35938C7.52604 5.11979 7.22917 5 6.875 5C6.52083 5 6.22396 5.11979 5.98438 5.35938C5.74479 5.59896 5.625 5.89583 5.625 6.25C5.625 6.60417 5.74479 6.90104 5.98438 7.14062C6.22396 7.38021 6.52083 7.5 6.875 7.5Z" fill="currentColor" />
+      </svg>
+    ),
+    guesswork: (
+      <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M5.625 18.75C6.14583 18.75 6.58854 18.5677 6.95312 18.2031C7.31771 17.8385 7.5 17.3958 7.5 16.875C7.5 16.3542 7.31771 15.9115 6.95312 15.5469C6.58854 15.1823 6.14583 15 5.625 15C5.10417 15 4.66146 15.1823 4.29688 15.5469C3.93229 15.9115 3.75 16.3542 3.75 16.875C3.75 17.3958 3.93229 17.8385 4.29688 18.2031C4.66146 18.5677 5.10417 18.75 5.625 18.75ZM5.625 7.5C6.14583 7.5 6.58854 7.31771 6.95312 6.95312C7.31771 6.58854 7.5 6.14583 7.5 5.625C7.5 5.10417 7.31771 4.66146 6.95312 4.29688C6.58854 3.93229 6.14583 3.75 5.625 3.75C5.10417 3.75 4.66146 3.93229 4.29688 4.29688C3.93229 4.66146 3.75 5.10417 3.75 5.625C3.75 6.14583 3.93229 6.58854 4.29688 6.95312C4.66146 7.31771 5.10417 7.5 5.625 7.5ZM11.25 13.125C11.7708 13.125 12.2135 12.9427 12.5781 12.5781C12.9427 12.2135 13.125 11.7708 13.125 11.25C13.125 10.7292 12.9427 10.2865 12.5781 9.92188C12.2135 9.55729 11.7708 9.375 11.25 9.375C10.7292 9.375 10.2865 9.55729 9.92188 9.92188C9.55729 10.2865 9.375 10.7292 9.375 11.25C9.375 11.7708 9.55729 12.2135 9.92188 12.5781C10.2865 12.9427 10.7292 13.125 11.25 13.125ZM16.875 18.75C17.3958 18.75 17.8385 18.5677 18.2031 18.2031C18.5677 17.8385 18.75 17.3958 18.75 16.875C18.75 16.3542 18.5677 15.9115 18.2031 15.5469C17.8385 15.1823 17.3958 15 16.875 15C16.3542 15 15.9115 15.1823 15.5469 15.5469C15.1823 15.9115 15 16.3542 15 16.875C15 17.3958 15.1823 17.8385 15.5469 18.2031C15.9115 18.5677 16.3542 18.75 16.875 18.75ZM16.875 7.5C17.3958 7.5 17.8385 7.31771 18.2031 6.95312C18.5677 6.58854 18.75 6.14583 18.75 5.625C18.75 5.10417 18.5677 4.66146 18.2031 4.29688C17.8385 3.93229 17.3958 3.75 16.875 3.75C16.3542 3.75 15.9115 3.93229 15.5469 4.29688C15.1823 4.66146 15 5.10417 15 5.625C15 6.14583 15.1823 6.58854 15.5469 6.95312C15.9115 7.31771 16.3542 7.5 16.875 7.5ZM2.5 22.5C1.8125 22.5 1.22396 22.2552 0.734375 21.7656C0.244792 21.276 0 20.6875 0 20V2.5C0 1.8125 0.244792 1.22396 0.734375 0.734375C1.22396 0.244792 1.8125 0 2.5 0H20C20.6875 0 21.276 0.244792 21.7656 0.734375C22.2552 1.22396 22.5 1.8125 22.5 2.5V20C22.5 20.6875 22.2552 21.276 21.7656 21.7656C21.276 22.2552 20.6875 22.5 20 22.5H2.5ZM2.5 20H20V2.5H2.5V20ZM2.5 2.5V20V2.5Z" fill="currentColor" />
+      </svg>
+    ),
+    'warning-triangle': (
+      <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M0 19L11 0L22 19H0ZM3.45 17H18.55L11 4L3.45 17ZM11 16C11.2833 16 11.5208 15.9042 11.7125 15.7125C11.9042 15.5208 12 15.2833 12 15C12 14.7167 11.9042 14.4792 11.7125 14.2875C11.5208 14.0958 11.2833 14 11 14C10.7167 14 10.4792 14.0958 10.2875 14.2875C10.0958 14.4792 10 14.7167 10 15C10 15.2833 10.0958 15.5208 10.2875 15.7125C10.4792 15.9042 10.7167 16 11 16ZM10 13H12V8H10V13Z" fill="currentColor" />
+      </svg>
+    ),
+    'mablab-seal': (
+      <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="currentColor" />
+      </svg>
+    ),
+    'paper-plane': (
+      <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M0 16V0L19 8L0 16ZM2 13L13.85 8L2 3V6.5L8 8L2 9.5V13ZM2 13V8V3V6.5V9.5V13Z" fill="currentColor" />
+      </svg>
+    ),
+    'corner-arrow-down': (
+      <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M0 13.5L2.1375 11.3625L7.5 16.7625V0H25.5V3H10.5V16.7625L15.9 11.3625L18.0375 13.4625L9 22.5L0 13.5Z" fill="currentColor" />
+      </svg>
+    ),
+    audience: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+    problems: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+    ),
+    place: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    ),
+    brand: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+        <line x1="4" y1="22" x2="4" y2="15" />
+      </svg>
+    ),
+    decision: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+        <path d="M3 3v5h5" />
+        <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+        <path d="M16 16h5v5" />
+      </svg>
+    ),
+    test: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <circle cx="12" cy="12" r="10" />
+        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+      </svg>
+    ),
+    protect: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+    brief: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+    ),
+    thunder: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
   };

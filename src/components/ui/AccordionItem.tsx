@@ -2,59 +2,57 @@
 
 import React, { useState } from 'react';
 
-interface AccordionItemProps {
+export interface AccordionItemProps {
+  id: string;
   question: string;
   answer: string;
   isOpen?: boolean;
-  onToggle?: () => void;
-  id: string;
+  onToggle?: (id: string) => void;
 }
 
 export default function AccordionItem({
+  id,
   question,
   answer,
-  isOpen = false,
+  isOpen,
   onToggle,
-  id,
 }: AccordionItemProps) {
   const [internalOpen, setInternalOpen] = useState(false);
-  const open = onToggle ? isOpen : internalOpen;
-  const handleToggle = onToggle || (() => setInternalOpen(!internalOpen));
+  const isCurrentlyOpen = isOpen !== undefined ? isOpen : internalOpen;
+
+  const handleClick = () => {
+    if (onToggle) {
+      onToggle(id);
+    } else {
+      setInternalOpen(!internalOpen);
+    }
+  };
 
   return (
-    <div className="border-2 border-stroke overflow-hidden transition-all duration-300">
+    <div className="bg-white border-2 border-stroke comic-shadow transition-all">
       <button
-        onClick={handleToggle}
-        className="w-full flex items-center justify-between p-5 md:p-6 text-left bg-white hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
-        aria-expanded={open}
-        aria-controls={`accordion-content-${id}`}
-        id={`accordion-header-${id}`}
+        onClick={handleClick}
+        aria-expanded={isCurrentlyOpen}
+        aria-controls={`faq-answer-${id}`}
+        className="w-full px-6 py-4 flex items-center justify-between text-left para-16 text-stroke uppercase cursor-pointer"
       >
-        <span className="font-heading font-bold text-sm md:text-base uppercase tracking-wide text-dark pr-4">
-          {question}
-        </span>
+        <span className="font-heading font-normal!">{question}</span>
         <span
-          className={`flex-shrink-0 w-8 h-8 flex items-center justify-center border-2 border-primary text-primary font-bold text-lg transition-transform duration-300 ${
-            open ? 'rotate-45 bg-primary text-white' : ''
-          }`}
+          className="w-6 h-6 border-2 border-stroke flex items-center justify-center text-danger font-bold ml-4 shrink-0"
           aria-hidden="true"
         >
-          +
+          {isCurrentlyOpen ? '-' : '+'}
         </span>
       </button>
 
-      <div
-        id={`accordion-content-${id}`}
-        role="region"
-        aria-labelledby={`accordion-header-${id}`}
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="px-5 md:px-6 pb-5 md:pb-6 border-t-2 border-primary/20">
-          <p className="para-16 text-gray-600 pt-4 leading-relaxed">{answer}</p>
+      {isCurrentlyOpen && (
+        <div
+          id={`faq-answer-${id}`}
+          className="px-6 pb-5 pt-1 text-gray-600 border-t border-gray-100 leading-relaxed font-normal! normal-case"
+        >
+          {answer}
         </div>
-      </div>
+      )}
     </div>
   );
 }

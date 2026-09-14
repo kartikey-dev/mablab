@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '../ui/Button';
 
 export default function HeroSection() {
   const [hoveredTab, setHoveredTab] = useState<'groundwork' | 'frameworks' | 'guesswork' | null>(null);
@@ -26,21 +27,21 @@ export default function HeroSection() {
                   alt="Scientist Avatar 1"
                   width={54}
                   height={54}
-                  className="w-13.5 h-13.5 rounded-none border-4 border-white object-cover grayscale"
+                  className="w-13.5 h-13.5 rounded-full border-4 border-white object-cover grayscale"
                 />
                 <Image
                   src="/images/avatar2.webp"
                   alt="Scientist Avatar 2"
                   width={54}
                   height={54}
-                  className="w-13.5 h-13.5 rounded-none border-4 border-white object-cover grayscale"
+                  className="w-13.5 h-13.5 rounded-full border-4 border-white object-cover grayscale"
                 />
                 <Image
                   src="/images/avatar3.webp"
                   alt="Scientist Avatar 3"
                   width={54}
                   height={54}
-                  className="w-13.5 h-13.5 rounded-none border-4 border-white object-cover grayscale"
+                  className="w-13.5 h-13.5 rounded-full border-4 border-white object-cover grayscale"
                 />
               </div>
 
@@ -94,15 +95,9 @@ export default function HeroSection() {
 
         {/* CTA Button */}
         <div className="mb-14">
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-3 bg-secondary text-white para-14 px-8 py-3.5 border-2 border-stroke comic-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
-          >
+          <Button href="#contact" variant="secondary" size="lg" showArrow>
             LET&apos;S TALK!
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.16669 10H15.8334M15.8334 10L10 4.16667M15.8334 10L10 15.8333" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
+          </Button>
         </div>
 
         {/* Bottom Strip Container with Interactive Hover Cards Floating Above */}

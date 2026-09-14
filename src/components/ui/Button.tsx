@@ -1,60 +1,77 @@
 import React from 'react';
+import Link from 'next/link';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'white-outline';
-type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonVariant = 'primary' | 'secondary' | 'white' | 'ghost' | 'white-outline';
+export type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   showArrow?: boolean;
+  icon?: React.ReactNode;
   href?: string;
+  fullWidth?: boolean;
   children: React.ReactNode;
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-purple-700 text-yellow-300 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]',
+    'bg-primary text-white border-2 border-stroke comic-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all',
   secondary:
-    'bg-yellow-400 text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]',
+    'bg-secondary text-white border-2 border-stroke comic-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all',
+  white:
+    'bg-white text-primary border-2 border-stroke comic-shadow hover:translate-x-0.5 hover:translate-y-0.5 transition-all',
   ghost:
-    'bg-transparent text-purple-900 border-none hover:bg-purple-100',
+    'bg-transparent text-primary hover:bg-purple-100 transition-all',
   'white-outline':
-    'bg-transparent text-white border-2 border-white hover:bg-white hover:text-purple-950',
+    'bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary transition-all',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-base',
-  lg: 'px-8 py-4 text-lg',
+  sm: 'px-4 py-2 para-12',
+  md: 'px-6 py-2.5 para-16 font-normal!',
+  lg: 'px-8 py-3.5 para-14',
 };
 
 export default function Button({
   variant = 'primary',
   size = 'md',
   showArrow = false,
+  icon,
   href,
+  fullWidth = false,
   children,
   className = '',
   ...props
 }: ButtonProps) {
-  const baseClasses =
-    'inline-flex items-center justify-center gap-2 font-heading font-extrabold uppercase tracking-wider rounded-none transition-all duration-200 cursor-pointer select-none';
+  const baseClasses = `inline-flex items-center justify-center gap-2 cursor-pointer select-none uppercase ${
+    fullWidth ? 'w-full' : ''
+  }`;
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
+  const content = (
+    <>
+      {children}
+      {icon ? (
+        icon
+      ) : showArrow ? (
+        <ArrowIcon />
+      ) : null}
+    </>
+  );
+
   if (href) {
     return (
-      <a href={href} className={classes}>
-        {children}
-        {showArrow && <ArrowIcon />}
-      </a>
+      <Link href={href} className={classes}>
+        {content}
+      </Link>
     );
   }
 
   return (
     <button className={classes} {...props}>
-      {children}
-      {showArrow && <ArrowIcon />}
+      {content}
     </button>
   );
 }
@@ -62,16 +79,15 @@ export default function Button({
 function ArrowIcon() {
   return (
     <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="transition-transform duration-200 group-hover:translate-x-1"
       aria-hidden="true"
     >
       <path
-        d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667"
+        d="M4.16669 10H15.8334M15.8334 10L10 4.16667M15.8334 10L10 15.8333"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
