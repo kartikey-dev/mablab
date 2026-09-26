@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import SectionHeading from '../ui/SectionHeading';
-import Button from '../ui/Button';
-import StoryCard from '../ui/StoryCard';
+import SectionHeading from '@/components/ui/SectionHeading';
+import Button from '@/components/ui/Button';
+import StoryCard from '@/components/ui/StoryCard';
 import { stories } from '@/data/stories';
 
 export default function MabStoriesSection() {

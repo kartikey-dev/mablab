@@ -11,7 +11,9 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastScrollY = useRef(0);
 
   // Lock body scrolling & hide scrollbar when Mega Menu or Mobile Menu is open
   useEffect(() => {
@@ -24,6 +26,39 @@ export default function Header() {
     return () => {
       document.body.style.overflow = '';
     };
+  }, [isMegaMenuOpen, mobileMenuOpen]);
+
+  // Hide header on scroll down, show on scroll up
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Always show header at the very top
+      if (currentScrollY <= 0) {
+        setHeaderVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Don't hide while mega menu or mobile menu is open
+      if (isMegaMenuOpen || mobileMenuOpen) {
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      if (currentScrollY < lastScrollY.current) {
+        // Scrolling UP → show header
+        setHeaderVisible(true);
+      } else if (currentScrollY > lastScrollY.current) {
+        // Scrolling DOWN → hide header
+        setHeaderVisible(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [isMegaMenuOpen, mobileMenuOpen]);
 
   const handleMouseEnter = () => {
@@ -40,7 +75,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="sticky top-0 z-50 bg-background-light border-b-4 border-stroke"
+        className={`sticky top-0 z-50 bg-background-light border-b-4 border-stroke transition-transform duration-300 ${headerVisible ? 'translate-y-0' : '-translate-y-full'}`}
         onMouseLeave={handleMouseLeave}
       >
         <div className="container mx-auto px-4 md:px-8 py-3 flex items-center justify-between relative">
@@ -82,11 +117,11 @@ export default function Header() {
               </Link>
             </div>
 
-            <Link href="/#why-us" className="hover:text-primary transition-colors">
+            <Link href="/why-us" className="hover:text-primary transition-colors">
               Why Us
             </Link>
-            <Link href="/#stories" className="hover:text-primary transition-colors">
-              Our Stories
+            <Link href="/contact" className="hover:text-primary transition-colors">
+              Contact
             </Link>
           </nav>
 
@@ -235,18 +270,18 @@ export default function Header() {
             </div>
 
             <Link
-              href="/#why-us"
+              href="/why-us"
               onClick={() => setMobileMenuOpen(false)}
               className="block para-16 text-stroke"
             >
               Why Us
             </Link>
             <Link
-              href="/#stories"
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="block para-16 text-stroke"
             >
-              Our Stories
+              Contact
             </Link>
             <Button
               href="/contact"

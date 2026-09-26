@@ -1,0 +1,53 @@
+'use client';
+
+import React, { useState } from 'react';
+import AccordionItem from '@/components/ui/AccordionItem';
+import SectionHeading from '@/components/ui/SectionHeading';
+import LetsTalkBanner from '@/components/sections/shared/LetsTalkBanner';
+import { faqItems } from '@/data/faq';
+
+export default function FaqSection() {
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  const handleToggle = (id: string) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  };
+
+  return (
+    <section id="faq" className="bg-[#D0DBED]/10 py-16 md:pt-[90px] md:pb-36 relative">
+      <div className="container mx-auto px-4 md:px-8 mb-12">
+
+        {/* Title: FREQUENTLY ANSWERED QUESTIONS */}
+        <div className="text-center mb-8">
+          <SectionHeading
+            text="FREQUENTLY ANSWERED"
+            accentText="QUESTIONS"
+            accentColor="primary"
+            className="text-stroke"
+          />
+        </div>
+
+        {/* FAQ Accordion List */}
+        <div className="max-w-3xl mx-auto space-y-6">
+          {faqItems.map((item) => (
+            <AccordionItem
+              key={item.id}
+              id={item.id}
+              question={item.question}
+              answer={item.answer}
+              isOpen={openId === item.id}
+              onToggle={handleToggle}
+            />
+          ))}
+        </div>
+
+      </div>
+
+      {/* Overlapping Footer Banner */}
+      <LetsTalkBanner
+        heading="You've Tried Enough Things."
+        description="If you're spending time and money on marketing without clear results, let's talk. Identify what matters, what doesn't, and where to focus next."
+      />
+    </section>
+  );
+}

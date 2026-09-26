@@ -79,7 +79,7 @@ export default function Footer() {
               LEGAL
             </h4>
             <ul className="space-y-2.5 para-14 text-[#6B7280] font-normal">
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
             </ul>
           </div>

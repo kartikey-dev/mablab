@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import SectionHeading from '../ui/SectionHeading';
-import TeamCard from '../ui/TeamCard';
+import SectionHeading from '@/components/ui/SectionHeading';
+import TeamCard from '@/components/ui/TeamCard';
 import { teamMembers } from '@/data/team';
 
 export default function TeamSection() {
@@ -20,7 +20,7 @@ export default function TeamSection() {
         </div>
 
         {/* 4 columns x 2 rows Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
           {teamMembers.map((member) => (
             <TeamCard
               key={member.id}

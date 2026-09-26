@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { plusJakartaSans, manrope } from '@/lib/fonts';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -109,7 +111,13 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className="font-body bg-background text-foreground antialiased selection:bg-purple-600 selection:text-white">
-        {children}
+        <div className="min-h-screen flex flex-col bg-background-light text-stroke border-4 border-stroke selection:bg-primary selection:text-white">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

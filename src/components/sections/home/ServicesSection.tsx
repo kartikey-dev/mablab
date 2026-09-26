@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import SectionHeading from '../ui/SectionHeading';
-import ServiceCard from '../ui/ServiceCard';
+import SectionHeading from '@/components/ui/SectionHeading';
+import ServiceCard from '@/components/ui/ServiceCard';
 import { services } from '@/data/services';
 
 export default function ServicesSection() {

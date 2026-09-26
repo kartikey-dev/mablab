@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import IconComponent, { type ServiceIconName } from './IconComponent';
 
 export interface ServiceCardProps {
@@ -16,7 +17,7 @@ export default function ServiceCard({
   icon,
   className = '',
 }: ServiceCardProps) {
-  return (
+  const cardContent = (
     <div
       id={id}
       className={`bg-white border-2 border-stroke comic-shadow p-6 hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex flex-col justify-between h-36 cursor-pointer group ${className}`}
@@ -42,4 +43,10 @@ export default function ServiceCard({
       </div>
     </div>
   );
+
+  if (id) {
+    return <Link href={`/services/${id}`}>{cardContent}</Link>;
+  }
+
+  return cardContent;
 }

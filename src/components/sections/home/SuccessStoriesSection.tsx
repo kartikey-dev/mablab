@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import SectionHeading from '../ui/SectionHeading';
-import CaseStudyCard from '../ui/CaseStudyCard';
+import SectionHeading from '@/components/ui/SectionHeading';
+import CaseStudyCard from '@/components/ui/CaseStudyCard';
 
 export default function SuccessStoriesSection() {
   return (

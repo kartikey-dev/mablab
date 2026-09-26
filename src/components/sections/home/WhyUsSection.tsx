@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import SectionHeading from '../ui/SectionHeading';
-import IconComponent from '../ui/IconComponent';
+import SectionHeading from '@/components/ui/SectionHeading';
+import IconComponent from '@/components/ui/IconComponent';
 
 export default function WhyUsSection() {
   const leftCallouts = [
