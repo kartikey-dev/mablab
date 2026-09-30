@@ -2,7 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import SectionHeading from '@/components/ui/SectionHeading';
-import LetsTalkBanner from '@/components/sections/shared/LetsTalkBanner';
+import FaqSection from '@/components/sections/home/FaqSection';
 import { servicesDataMap } from '@/data/servicesData';
 import { Metadata } from 'next';
 
@@ -115,10 +115,10 @@ export default async function GenericServiceDetailPage({ params }: ServicePagePr
         </div>
       </section>
 
-      {/* Overlapping Footer CTA Banner */}
-      <LetsTalkBanner
-        heading={`READY TO SCALE WITH ${data.name.toUpperCase()}?`}
-        description="Schedule a discovery call with Mablab marketing scientists and initiate your formula today."
+      {/* Shared FAQ Section with Custom Banner Content */}
+      <FaqSection
+        bannerHeading={`READY TO SCALE WITH ${data.name.toUpperCase()}?`}
+        bannerDescription="Schedule a discovery call with Mablab marketing scientists and initiate your formula today."
       />
     </>
   );

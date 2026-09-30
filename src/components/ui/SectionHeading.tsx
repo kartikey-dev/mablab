@@ -1,8 +1,8 @@
 import React from 'react';
 
 export interface SectionHeadingProps {
-  text?: string;
-  accentText?: string;
+  text?: string | React.ReactNode;
+  accentText?: string | React.ReactNode;
   accentColor?: 'primary' | 'secondary' | 'danger' | 'cyan' | 'white' | string;
   className?: string;
   as?: 'h1' | 'h2' | 'h3';

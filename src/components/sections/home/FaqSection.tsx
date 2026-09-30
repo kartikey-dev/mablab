@@ -4,9 +4,15 @@ import React, { useState } from 'react';
 import AccordionItem from '@/components/ui/AccordionItem';
 import SectionHeading from '@/components/ui/SectionHeading';
 import LetsTalkBanner from '@/components/sections/shared/LetsTalkBanner';
-import { faqItems } from '@/data/faq';
+import { faqItems, FaqItem } from '@/data/faq';
 
-export default function FaqSection() {
+export interface FaqSectionProps {
+  bannerHeading?: React.ReactNode;
+  bannerDescription?: string;
+  items?: FaqItem[];
+}
+
+export default function FaqSection({ bannerHeading, bannerDescription, items = faqItems }: FaqSectionProps = {}) {
   const [openId, setOpenId] = useState<string | null>(null);
 
   const handleToggle = (id: string) => {
@@ -29,7 +35,7 @@ export default function FaqSection() {
 
         {/* FAQ Accordion List */}
         <div className="max-w-3xl mx-auto space-y-6">
-          {faqItems.map((item) => (
+          {items.map((item) => (
             <AccordionItem
               key={item.id}
               id={item.id}
@@ -45,8 +51,8 @@ export default function FaqSection() {
 
       {/* Overlapping Footer Banner */}
       <LetsTalkBanner
-        heading="You've Tried Enough Things."
-        description="If you're spending time and money on marketing without clear results, let's talk. Identify what matters, what doesn't, and where to focus next."
+        heading={bannerHeading}
+        description={bannerDescription}
       />
     </section>
   );

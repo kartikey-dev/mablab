@@ -29,7 +29,7 @@ export default function ServiceHero({
         </div>
 
         {/* Hero Title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white tracking-tight leading-[1.15] max-w-5xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white tracking-tight leading-[1.15] mx-auto">
           <div>{line1}</div>
           <div className="mt-2 md:mt-3">{line2}</div>
         </h1>

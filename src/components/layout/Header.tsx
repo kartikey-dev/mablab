@@ -94,14 +94,14 @@ export default function Header() {
 
           {/* Center Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-stroke para-16">
-            {/* Services Link with Hover Mega Menu & Click to /services */}
+            {/* Services Label — hover opens mega menu, no /services listing page */}
             <div
               className="relative py-2"
               onMouseEnter={handleMouseEnter}
             >
-              <Link
-                href="/services"
-                className={`flex items-center gap-1.5 transition-colors ${isMegaMenuOpen ? 'text-primary' : 'hover:text-primary'
+              <button
+                type="button"
+                className={`flex items-center gap-1.5 transition-colors cursor-default ${isMegaMenuOpen ? 'text-primary' : 'hover:text-primary'
                   }`}
               >
                 <span>Services</span>
@@ -114,7 +114,7 @@ export default function Header() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
-              </Link>
+              </button>
             </div>
 
             <Link href="/why-us" className="hover:text-primary transition-colors">
@@ -159,19 +159,9 @@ export default function Header() {
             <div className="container mx-auto px-4 md:px-8 py-8">
 
               {/* Header inside Mega Menu */}
-              <div className="flex items-center justify-between border-b-2 border-gray-100 pb-4 mb-6">
-                <div>
-                  <span className="para-12 text-primary">EXPERIMENTAL FORMULAS</span>
-                  <h3 className="heading-h3 text-stroke mt-0.5">OUR 12 SCIENTIFIC SERVICES</h3>
-                </div>
-                <Link
-                  href="/services"
-                  onClick={() => setIsMegaMenuOpen(false)}
-                  className="inline-flex items-center gap-2 bg-secondary text-white para-14 px-5 py-2 border-2 border-stroke comic-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
-                >
-                  <span>VIEW ALL SERVICES PAGE</span>
-                  <span>→</span>
-                </Link>
+              <div className="border-b-2 border-gray-100 pb-4 mb-6">
+                <span className="para-12 text-primary">EXPERIMENTAL FORMULAS</span>
+                <h3 className="heading-h3 text-stroke mt-0.5">OUR 12 SCIENTIFIC SERVICES</h3>
               </div>
 
               {/* 4 Columns x 3 Rows Grid of Services */}
@@ -179,7 +169,7 @@ export default function Header() {
                 {services.map((service) => (
                   <Link
                     key={service.id}
-                    href={`/services#${service.id}`}
+                    href={`/services/${service.id}`}
                     onClick={() => setIsMegaMenuOpen(false)}
                     className="p-3.5 border-2 border-transparent hover:border-stroke hover:bg-background-light transition-all rounded-none group"
                   >
@@ -230,9 +220,7 @@ export default function Header() {
                 className="flex items-center justify-between para-16 text-stroke py-2 cursor-pointer"
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               >
-                <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary">
-                  Services
-                </Link>
+                <span className="hover:text-primary">Services</span>
                 <button className="p-1 focus:outline-none" aria-label="Toggle services sub-menu">
                   <svg
                     className={`w-5 h-5 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`}
@@ -247,17 +235,10 @@ export default function Header() {
 
               {mobileServicesOpen && (
                 <div className="pl-4 pt-2 space-y-2.5 border-l-2 border-primary my-2">
-                  <Link
-                    href="/services"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block para-14 text-primary font-bold underline mb-3"
-                  >
-                    → View All Services Page
-                  </Link>
                   {services.map((service) => (
                     <Link
                       key={service.id}
-                      href={`/services#${service.id}`}
+                      href={`/services/${service.id}`}
                       onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center gap-2.5 para-14 text-gray-700 hover:text-primary py-1"
                     >

@@ -13,7 +13,7 @@ export default function LetsTalkBanner({
   className = "",
 }: LetsTalkBannerProps) {
   return (
-    <div className={`w-full max-w-6xl mx-auto px-4 md:px-8 z-20 absolute left-1/2 -translate-x-1/2 -bottom-23 ${className}`}>
+    <div className={`w-full max-w-6xl mx-auto px-4 md:px-8 z-20 absolute left-1/2 -translate-x-1/2 bottom-[calc(0%-82px)] ${className}`}>
       <div className="bg-primary border-2 border-stroke comic-shadow-lg p-6 md:p-10 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
           <h3 className="text-2xl md:text-4xl font-heading font-extrabold text-white mb-3 tracking-tight">
