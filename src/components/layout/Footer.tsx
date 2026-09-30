@@ -27,7 +27,7 @@ export default function Footer() {
     <footer className="bg-background-light pt-16 md:pt-35 pb-6 border-t-4 border-stroke">
       <div className="container mx-auto px-4 md:px-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_1fr] gap-8 mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
 
           {/* Col 1: Logo + Tagline + Social */}
           <div>
@@ -59,9 +59,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Navigation */}
+          {/* Col 2: Navigation / Quick Links */}
           <div>
-            <h4 className="para-12 text-stroke mb-4">NAVIGATION</h4>
+            <h4 className="para-12 text-stroke mb-4">QUICK LINKS</h4>
             <ul className="space-y-2.5 para-14 text-[#6B7280] font-normal">
               <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link href="/why-us" className="hover:text-primary transition-colors">Why Us</Link></li>
@@ -70,9 +70,9 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Services — split into two sub-columns */}
-          <div className="md:col-span-2">
+          <div>
             <h4 className="para-12 text-stroke mb-4">SERVICES</h4>
-            <div className="grid grid-cols-2 gap-x-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
               <ul className="space-y-2.5 para-14 text-[#6B7280] font-normal">
                 {servicesCol1.map((s) => (
                   <li key={s.href}>
