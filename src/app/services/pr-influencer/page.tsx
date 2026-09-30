@@ -2,6 +2,7 @@ import React from 'react';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import FaqSection from '@/components/sections/home/FaqSection';
+import GsapSection from '@/components/ui/GsapSection';
 import { prFaqItems } from '@/data/faq';
 import { Metadata } from 'next';
 

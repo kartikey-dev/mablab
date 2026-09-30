@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import FaqSection from '@/components/sections/home/FaqSection';
+import GsapSection from '@/components/ui/GsapSection';
 import { servicesDataMap } from '@/data/servicesData';
 import { Metadata } from 'next';
 
@@ -61,13 +62,13 @@ export default async function GenericServiceDetailPage({ params }: ServicePagePr
       />
 
       {/* Service Overview & Value Proposition Section */}
-      <section className="bg-background-light py-16 md:py-[90px]">
+      <GsapSection animation="fadeInUp" className="bg-background-light py-16 md:py-[90px]">
         <div className="container mx-auto px-4 md:px-8">
           <SectionHeading text="THE" accentText={`${data.name.toUpperCase()} FORMULA`} accentColor="primary" className="mb-10" />
 
           {/* Overview Grid */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="border-2 border-stroke comic-shadow p-8 bg-white">
+            <div className="border-2 border-stroke comic-shadow comic-shadow-hover p-8 bg-white">
               <h2 className="heading-h3 text-stroke mb-4">WHAT IS {data.name.toUpperCase()}?</h2>
               <p className="para-18 text-gray-700 leading-relaxed font-normal mb-4">
                 {data.overview}
@@ -77,7 +78,7 @@ export default async function GenericServiceDetailPage({ params }: ServicePagePr
               </p>
             </div>
 
-            <div className="bg-primary text-white border-2 border-stroke comic-shadow p-8 flex flex-col justify-between">
+            <div className="bg-primary text-white border-2 border-stroke comic-shadow comic-shadow-hover p-8 flex flex-col justify-between">
               <div>
                 <span className="para-12 text-yellow-300 font-extrabold uppercase tracking-widest block mb-3">
                   WHY IT MATTERS
@@ -98,7 +99,7 @@ export default async function GenericServiceDetailPage({ params }: ServicePagePr
             {data.deliverables.map((item) => (
               <div
                 key={item.number}
-                className="bg-white border-2 border-stroke comic-shadow p-8 flex flex-col justify-between hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+                className="bg-white border-2 border-stroke comic-shadow comic-shadow-hover p-8 flex flex-col justify-between"
               >
                 <div>
                   <span className="para-12 text-primary font-extrabold tracking-widest block mb-2">
@@ -113,7 +114,7 @@ export default async function GenericServiceDetailPage({ params }: ServicePagePr
             ))}
           </div>
         </div>
-      </section>
+      </GsapSection>
 
       {/* Shared FAQ Section with Custom Banner Content */}
       <FaqSection

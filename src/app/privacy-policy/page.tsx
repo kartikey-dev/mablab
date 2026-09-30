@@ -1,5 +1,6 @@
 import React from 'react';
 import PrivacyPolicySection from '@/components/sections/privacy-policy/PrivacyPolicySection';
+import GsapSection from '@/components/ui/GsapSection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <PrivacyPolicySection />
+    <GsapSection animation="fadeInUp">
+      <PrivacyPolicySection />
+    </GsapSection>
   );
 }

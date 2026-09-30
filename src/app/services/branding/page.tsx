@@ -4,6 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
 import IconComponent from '@/components/ui/IconComponent';
 import FaqSection from '@/components/sections/home/FaqSection';
+import GsapSection from '@/components/ui/GsapSection';
 import { brandingFaqItems } from '@/data/faq';
 
 export default function BrandingServicePage() {
@@ -44,7 +45,7 @@ export default function BrandingServicePage() {
       {/* ============================================
           SECTION 2: WHERE DOES YOUR BRAND STAND?
           ============================================ */}
-      <section className="bg-background-light py-16 md:py-[90px]">
+      <GsapSection animation="fadeInUp" className="bg-background-light py-16 md:py-[90px]">
         <div className="container mx-auto px-4 md:px-8">
           <SectionHeading
             text="Where Does Your"
@@ -79,7 +80,7 @@ export default function BrandingServicePage() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white border-2 border-stroke comic-shadow p-6 flex flex-col justify-between"
+                className="bg-white border-2 border-stroke comic-shadow comic-shadow-hover p-6 flex flex-col justify-between cursor-pointer"
               >
                 <div>
                   <div className="text-red-500 mb-4">
@@ -97,7 +98,7 @@ export default function BrandingServicePage() {
           </div>
 
           {/* Full Width Bottom Callout Box */}
-          <div className="border-2 border-stroke bg-[#EEF4FF] p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 comic-shadow">
+          <div className="border-2 border-stroke bg-[#EEF4FF] p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 comic-shadow comic-shadow-hover">
             <p className="para-24 text-stroke font-extrabold">
               We help you figure out what your brand needs and build it.
             </p>
@@ -111,7 +112,7 @@ export default function BrandingServicePage() {
             </Button>
           </div>
         </div>
-      </section>
+      </GsapSection>
 
       {/* ============================================
           SECTION 3: SERVICES LIST

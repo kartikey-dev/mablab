@@ -27,7 +27,7 @@ export default function FaqSection({ bannerHeading, bannerDescription, items = f
   });
 
   return (
-    <section id="faq" className="bg-[#D0DBED]/10 py-16 md:pt-[90px] md:pb-36 relative overflow-hidden">
+    <section id="faq" className="bg-[#D0DBED]/10 pt-16 md:pt-[90px] pb-12 relative overflow-visible">
       <div className="container mx-auto px-4 md:px-8 mb-12">
 
         {/* Title: FREQUENTLY ANSWERED QUESTIONS */}

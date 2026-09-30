@@ -24,7 +24,7 @@ const servicesCol2 = [
 
 export default function Footer() {
   return (
-    <footer className="bg-background-light pt-16 md:pt-35 pb-6 border-t-4 border-stroke">
+    <footer className="bg-background-light pt-24 md:pt-36 pb-6 border-t-4 border-stroke relative z-10">
       <div className="container mx-auto px-4 md:px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_2fr] gap-8 mb-10">

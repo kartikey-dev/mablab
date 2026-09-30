@@ -4,6 +4,7 @@ import ServiceHero from '@/components/sections/services/ServiceHero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import IconComponent from '@/components/ui/IconComponent';
 import FaqSection from '@/components/sections/home/FaqSection';
+import GsapSection from '@/components/ui/GsapSection';
 import { webFaqItems } from '@/data/faq';
 import { Metadata } from 'next';
 

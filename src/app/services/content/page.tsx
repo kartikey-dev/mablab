@@ -3,6 +3,7 @@ import ServiceHero from '@/components/sections/services/ServiceHero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import IconComponent from '@/components/ui/IconComponent';
 import FaqSection from '@/components/sections/home/FaqSection';
+import GsapSection from '@/components/ui/GsapSection';
 import { contentFaqItems } from '@/data/faq';
 import { Metadata } from 'next';
 
@@ -31,7 +32,7 @@ export default function ContentServicePage() {
       {/* ============================================
           SECTION 2: WHAT DOES YOUR CONTENT NEED?
           ============================================ */}
-      <section className="bg-white py-16 md:py-[90px]">
+      <GsapSection animation="fadeInUp" className="bg-white py-16 md:py-[90px]">
         <div className="container mx-auto px-4 md:px-8">
           <SectionHeading
             text="What Does Your"
@@ -83,7 +84,7 @@ export default function ContentServicePage() {
             ))}
           </div>
         </div>
-      </section>
+      </GsapSection>
 
       {/* ============================================
           SECTION 3: FIND THE IDEA. SHAPE THE ARGUMENT. MAKE IT TRAVEL.

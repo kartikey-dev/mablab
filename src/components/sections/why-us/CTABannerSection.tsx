@@ -3,7 +3,7 @@ import LetsTalkBanner from '@/components/sections/shared/LetsTalkBanner';
 
 export default function CTABannerSection() {
   return (
-    <section className="bg-background-light py-16 md:pt-[90px] md:pb-36 relative">
+    <section className="bg-background-light pt-16 md:pt-[90px] pb-12 relative overflow-visible">
       <div className="container mx-auto px-4 md:px-8 mb-10">
 
         {/* The Lab Is Always Open Card */}

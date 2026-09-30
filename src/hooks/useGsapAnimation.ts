@@ -87,7 +87,12 @@ export function useGsapAnimation<T extends HTMLElement>(
     gsap.set(el, initialProps);
     tween = gsap.to(el, animateProps);
 
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
     return () => {
+      clearTimeout(timer);
       tween?.kill();
     };
   }, [animation, duration, delay, y, x, scale, triggerStart, disabled]);
@@ -138,7 +143,12 @@ export function useStaggerAnimation<T extends HTMLElement>(
       },
     });
 
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
     return () => {
+      clearTimeout(timer);
       tween?.kill();
     };
   }, [childSelector, duration, stagger, y, triggerStart]);
