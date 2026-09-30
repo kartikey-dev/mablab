@@ -3,44 +3,51 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import { useGsapAnimation } from '@/hooks/useGsapAnimation';
 
 export default function HeroSection() {
     const [hoveredTab, setHoveredTab] = useState<'groundwork' | 'frameworks' | 'guesswork' | null>(null);
 
+    const heroRef = useGsapAnimation<HTMLDivElement>({
+        animation: 'fadeInUp',
+        duration: 0.9,
+        y: 45,
+    });
+
     return (
-        <section className="bg-background-light py-16 md:py-[90px] relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
+        <section className="bg-background-light py-12 sm:py-16 md:py-[90px] relative overflow-hidden">
+            <div ref={heroRef} className="container mx-auto px-4 md:px-8 text-center relative z-10 max-w-full">
 
                 {/* Main Headline Stack */}
-                <h1 className="max-w-4xl mx-auto mb-12">
+                <h1 className="max-w-4xl mx-auto mb-10 sm:mb-12">
 
                     {/* Line 1: Marketing Scientists with Avatars above Scientists */}
-                    <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-stroke tracking-tight text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold">
+                    <div className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 gap-y-2 text-stroke tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold">
                         <span>Marketing</span>
 
                         <div className="relative inline-block">
                             {/* 3 Overlapping Grayscale Avatars Floating Above "Scientists" */}
-                            <div className="absolute -top-11 right-12 hidden sm:flex -space-x-3 items-center">
+                            <div className="absolute -top-11 right-6 sm:right-12 hidden sm:flex -space-x-3 items-center">
                                 <Image
                                     src="/images/avatar1.webp"
                                     alt="Scientist Avatar 1"
                                     width={54}
                                     height={54}
-                                    className="w-13.5 h-13.5 rounded-full border-4 border-white object-cover grayscale"
+                                    className="w-11 h-11 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
                                 />
                                 <Image
                                     src="/images/avatar2.webp"
                                     alt="Scientist Avatar 2"
                                     width={54}
                                     height={54}
-                                    className="w-13.5 h-13.5 rounded-full border-4 border-white object-cover grayscale"
+                                    className="w-11 h-11 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
                                 />
                                 <Image
                                     src="/images/avatar3.webp"
                                     alt="Scientist Avatar 3"
                                     width={54}
                                     height={54}
-                                    className="w-13.5 h-13.5 rounded-full border-4 border-white object-cover grayscale"
+                                    className="w-11 h-11 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
                                 />
                             </div>
 
@@ -54,7 +61,7 @@ export default function HeroSection() {
                                     viewBox="0 0 18 25"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="absolute -top-2 right-0 rotate-12 pointer-events-none"
+                                    className="absolute -top-2 right-0 rotate-12 pointer-events-none w-3.5 h-5 sm:w-4.5 sm:h-6"
                                 >
                                     <path
                                         d="M-1.32248e-05 21.2818L0.519767 18.8364L6.63319 20.1359L7.15297 17.6905C5.46159 17.331 4.14654 16.4285 3.20781 14.983C2.26909 13.5375 1.97948 11.969 2.339 10.2776C2.60322 9.03457 3.18495 7.97614 4.08419 7.10234C4.98343 6.22854 6.06364 5.68074 7.32481 5.45894C7.63511 4.80074 8.11594 4.31722 8.7673 4.0084C9.41865 3.69958 10.101 3.62097 10.8142 3.77257L10.5445 1.73447L11.797 1.55342L11.603 0.362045L14.108 -4.37684e-05L14.2279 1.23947L15.4805 1.05843L16.8937 10.9433L15.6412 11.1243L15.8222 12.3768L13.3172 12.7389L13.1973 11.4994L11.9448 11.6804L11.64 9.50707C11.2736 9.72739 10.8766 9.86664 10.4489 9.92483C10.0213 9.98301 9.60796 9.94841 9.20906 9.82102C8.76941 9.68497 8.38089 9.45862 8.04352 9.14198C7.70615 8.82533 7.43164 8.46347 7.21998 8.0564C6.60047 8.2655 6.07431 8.61159 5.64149 9.09466C5.20868 9.57773 4.92297 10.1453 4.78437 10.7974C4.56779 11.8163 4.74032 12.7582 5.30195 13.623C5.86358 14.4879 6.65385 15.0286 7.67275 15.2451L17.4542 17.3243L16.9345 19.7696L10.821 18.4702L10.3012 20.9155L17.6374 22.4749L17.1176 24.9203L-1.32248e-05 21.2818ZM13.552 9.5301L14.7433 9.33606L13.8862 3.14763L12.6337 3.32867L13.552 9.5301ZM9.84343 8.03897C10.1899 8.11261 10.5052 8.05716 10.7893 7.87262C11.0735 7.68809 11.2524 7.4226 11.326 7.07618C11.3996 6.72975 11.3442 6.41445 11.1597 6.13029C10.9751 5.84613 10.7096 5.66724 10.3632 5.5936C10.0168 5.51997 9.70149 5.57542 9.41733 5.75995C9.13317 5.94449 8.95427 6.20997 8.88064 6.5564C8.807 6.90282 8.86245 7.21812 9.04699 7.50228C9.23153 7.78644 9.49701 7.96534 9.84343 8.03897Z"
@@ -80,12 +87,12 @@ export default function HeroSection() {
                     </div>
 
                     {/* Line 2: for Your Business Needs inside Double-Bordered Container */}
-                    <div className="mt-3 relative flex flex-wrap items-center justify-center gap-3 text-stroke text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold">
+                    <div className="mt-3 sm:mt-4 relative flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-stroke text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold">
                         <span>for Your</span>
 
-                        <div className="relative top-2 inline-block border-2 border-stroke comic-shadow p-2.5 text-left bg-white">
+                        <div className="relative top-1 sm:top-2 inline-block border-2 border-stroke comic-shadow p-2 sm:p-2.5 text-left bg-white max-w-full">
                             <span className="block text-stroke leading-none">Business Needs</span>
-                            <span className="block para-16 text-primary mt-2 tracking-normal text-center font-normal">
+                            <span className="block para-12 sm:para-16 text-primary mt-1.5 sm:mt-2 tracking-normal text-center font-normal">
                                 Branding, Marketing, Web Development, Market Research, Etc.
                             </span>
                         </div>
@@ -93,7 +100,7 @@ export default function HeroSection() {
                 </h1>
 
                 {/* CTA Button */}
-                <div className="mb-14">
+                <div className="mb-10 sm:mb-14">
                     <Button href="#contact" variant="secondary" size="lg" showArrow>
                         LET&apos;S TALK!
                     </Button>

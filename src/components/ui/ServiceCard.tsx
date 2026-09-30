@@ -20,7 +20,7 @@ export default function ServiceCard({
   const cardContent = (
     <div
       id={id}
-      className={`bg-white border-2 border-stroke comic-shadow p-6 hover:translate-x-0.5 hover:translate-y-0.5 transition-all h-36 cursor-pointer group relative overflow-hidden ${className}`}
+      className={`bg-white border-2 border-stroke comic-shadow comic-shadow-hover p-6 h-36 cursor-pointer group relative overflow-hidden ${className}`}
       role="article"
       aria-label={name}
     >

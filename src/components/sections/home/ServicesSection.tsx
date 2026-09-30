@@ -4,8 +4,15 @@ import React from 'react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ServiceCard from '@/components/ui/ServiceCard';
 import { services } from '@/data/services';
+import { useStaggerAnimation } from '@/hooks/useGsapAnimation';
 
 export default function ServicesSection() {
+  const containerRef = useStaggerAnimation<HTMLDivElement>('.service-card-item', {
+    stagger: 0.08,
+    duration: 0.6,
+    y: 35,
+  });
+
   return (
     <section id="services" className="bg-background-light py-16 md:py-[90px] relative overflow-hidden">
       {/* Top Right Corner Decorative SVG */}
@@ -23,15 +30,16 @@ export default function ServicesSection() {
         </div>
 
         {/* 3 columns x 4 rows Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
-            <ServiceCard
-              key={service.id}
-              id={service.id}
-              name={service.name}
-              description={service.description}
-              icon={service.icon}
-            />
+            <div key={service.id} className="service-card-item">
+              <ServiceCard
+                id={service.id}
+                name={service.name}
+                description={service.description}
+                icon={service.icon}
+              />
+            </div>
           ))}
         </div>
 

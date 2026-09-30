@@ -18,7 +18,7 @@ export default function StoryCard({
 }: StoryCardProps) {
   return (
     <div
-      className={`bg-white border-2 border-stroke comic-shadow p-6 flex flex-col justify-between h-full relative hover:translate-x-0.5 hover:translate-y-0.5 transition-all cursor-pointer ${className}`}
+      className={`bg-white border-2 border-stroke comic-shadow comic-shadow-hover p-6 flex flex-col justify-between h-full relative cursor-pointer ${className}`}
       role="article"
     >
       {/* Large Watermark Number above card title */}
