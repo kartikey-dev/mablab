@@ -78,7 +78,7 @@ body {
   font-size: clamp(2.25rem, 4.5vw + 1rem, 4.5rem);
   line-height: 1.08;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   word-break: break-word;
   overflow-wrap: break-word;
 }
@@ -89,7 +89,7 @@ body {
   font-size: clamp(1.75rem, 3.2vw + 0.75rem, 3rem);
   line-height: 1.12;
   letter-spacing: -0.015em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   word-break: break-word;
   overflow-wrap: break-word;
 }
@@ -100,7 +100,7 @@ body {
   font-size: clamp(1.25rem, 2.2vw + 0.5rem, 2rem);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   word-break: break-word;
   overflow-wrap: break-word;
 }

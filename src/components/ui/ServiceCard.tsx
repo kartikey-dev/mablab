@@ -20,12 +20,25 @@ export default function ServiceCard({
   const cardContent = (
     <div
       id={id}
-      className={`bg-white border-2 border-stroke comic-shadow comic-shadow-hover p-6 h-36 cursor-pointer group relative overflow-hidden ${className}`}
+      className={`bg-white border-2 border-stroke comic-shadow comic-shadow-hover p-5 md:p-6 h-auto md:h-36 cursor-pointer group relative overflow-hidden ${className}`}
       role="article"
       aria-label={name}
     >
-      {/* 2-Slot Visible Mask (96px height) */}
-      <div className="relative overflow-hidden h-24">
+      {/* Mobile View: All 3 elements (Icon, Heading, Description) open & visible */}
+      <div className="md:hidden flex flex-col gap-2">
+        <div className="text-red-500">
+          <IconComponent name={icon as ServiceIconName} className="w-7 h-7 text-red-500" />
+        </div>
+        <h3 className="font-heading text-xl font-bold text-stroke uppercase leading-tight">
+          {name}
+        </h3>
+        <p className="para-14 text-gray-700 font-medium normal-case leading-snug">
+          {description}
+        </p>
+      </div>
+
+      {/* Desktop View: Interactive 2-Slot Hover Mask (96px height) */}
+      <div className="hidden md:block relative overflow-hidden h-24">
         {/* Animated 3-Row Track (Row 1: Icon, Row 2: Heading, Row 3: Description) */}
         <div className="transition-transform duration-300 ease-in-out group-hover:-translate-y-12">
           {/* Row 1: Icon (Default top slot) */}

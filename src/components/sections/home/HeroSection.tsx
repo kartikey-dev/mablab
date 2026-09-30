@@ -16,7 +16,7 @@ export default function HeroSection() {
 
     return (
         <section className="bg-background-light py-12 sm:py-16 md:py-[90px] relative overflow-hidden">
-            <div ref={heroRef} className="container mx-auto px-4 md:px-8 text-center relative z-10 max-w-full">
+            <div ref={heroRef} className="container mx-auto px-4 md:px-8 text-center relative z-10">
 
                 {/* Main Headline Stack */}
                 <h1 className="max-w-4xl mx-auto mb-10 sm:mb-12">
@@ -175,35 +175,74 @@ export default function HeroSection() {
 
                         {/* Tab 1: GROUNDWORK */}
                         <div
-                            className={`p-6 flex items-center justify-center gap-3 text-primary text-2xl font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'groundwork' ? 'bg-purple-50' : ''
+                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'groundwork' ? 'bg-purple-50' : ''
                                 }`}
                             onMouseEnter={() => setHoveredTab('groundwork')}
                             onMouseLeave={() => setHoveredTab(null)}
                         >
-                            <GroundworkIcon />
-                            <span>GROUNDWORK</span>
+                            <div className="flex items-center justify-center gap-3 text-xl sm:text-2xl">
+                                <GroundworkIcon />
+                                <span>GROUNDWORK</span>
+                            </div>
+
+                            {/* Mobile Open Explanation Box */}
+                            <div className="md:hidden mt-2 p-3 bg-purple-50 border-2 border-stroke text-left w-full">
+                                <div className="w-5 h-5 bg-primary text-white flex items-center justify-center font-extrabold text-xs mb-1 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]">
+                                    ✓
+                                </div>
+                                <p className="para-14 text-stroke font-normal normal-case leading-relaxed">
+                                    A clear view of your market, audience, and opportunity.
+                                </p>
+                            </div>
                         </div>
 
                         {/* Tab 2: FRAMEWORKS */}
                         <div
-                            className={`p-6 flex items-center justify-center gap-3 text-primary text-2xl font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'frameworks' ? 'bg-cyan-50' : ''
+                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'frameworks' ? 'bg-cyan-50' : ''
                                 }`}
                             onMouseEnter={() => setHoveredTab('frameworks')}
                             onMouseLeave={() => setHoveredTab(null)}
                         >
-                            <FrameworksIcon />
-                            <span>FRAMEWORKS</span>
+                            <div className="flex items-center justify-center gap-3 text-xl sm:text-2xl">
+                                <FrameworksIcon />
+                                <span>FRAMEWORKS</span>
+                            </div>
+
+                            {/* Mobile Open Explanation Box */}
+                            <div className="md:hidden mt-2 p-3 bg-cyan-50 border-2 border-stroke text-left w-full">
+                                <div className="w-5 h-5 bg-secondary text-white flex items-center justify-center font-extrabold text-xs mb-1 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]">
+                                    ✓
+                                </div>
+                                <p className="para-14 text-stroke font-normal normal-case leading-relaxed">
+                                    Data and research behind every strategic decision.
+                                </p>
+                            </div>
                         </div>
 
                         {/* Tab 3: GUESSWORK */}
                         <div
-                            className={`p-6 flex items-center justify-center gap-3 text-primary text-2xl font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'guesswork' ? 'bg-red-50' : 'bg-[#D0DBED]/30'
+                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'guesswork' ? 'bg-red-50' : 'bg-[#D0DBED]/30'
                                 }`}
                             onMouseEnter={() => setHoveredTab('guesswork')}
                             onMouseLeave={() => setHoveredTab(null)}
                         >
-                            <GuessworkIcon />
-                            <span className="line-through decoration-[#6B7280] decoration-2 text-[#6B7280]">GUESSWORK</span>
+                            <div className="flex items-center justify-center gap-3 text-xl sm:text-2xl">
+                                <GuessworkIcon />
+                                <span className="line-through decoration-[#6B7280] decoration-2 text-[#6B7280]">GUESSWORK</span>
+                            </div>
+
+                            {/* Mobile Open Explanation Box */}
+                            <div className="md:hidden mt-2 p-3 bg-[#E0E7FF] border-2 border-dashed border-red-500 text-left w-full relative overflow-hidden">
+                                <div className="w-5 h-5 bg-red-600 text-white flex items-center justify-center font-extrabold text-xs mb-1 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]">
+                                    ✕
+                                </div>
+                                <p className="para-14 text-gray-400 font-normal normal-case leading-relaxed line-through">
+                                    No decisions based on assumptions or trends.
+                                </p>
+                                <span className="inline-block mt-1 para-12 text-red-500 font-extrabold tracking-widest uppercase">
+                                    ELIMINATED
+                                </span>
+                            </div>
                         </div>
 
                     </div>
