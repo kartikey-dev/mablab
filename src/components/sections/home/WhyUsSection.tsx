@@ -23,13 +23,13 @@ export default function WhyUsSection() {
       id: 'place',
       iconName: 'place',
       label: (<><strong>Find</strong> Your Place & Own It</>),
-      lineWidth: 'w-12 md:w-40',
+      lineWidth: 'w-12 md:w-36',
     },
     {
       id: 'brand',
       iconName: 'brand',
       label: (<><strong>Build</strong> Your Position Into a Brand</>),
-      lineWidth: 'w-14 md:w-36',
+      lineWidth: 'w-14 md:w-32',
     },
   ];
 
@@ -44,7 +44,7 @@ export default function WhyUsSection() {
       id: 'test',
       iconName: 'test',
       label: (<><strong>Test.</strong> Learn. Make It Better</>),
-      lineWidth: 'w-5 md:w-18',
+      lineWidth: 'w-5 md:w-16',
     },
     {
       id: 'protect',
@@ -55,55 +55,41 @@ export default function WhyUsSection() {
   ];
 
   return (
-    <section
-      id="why-us"
-      className="relative w-full overflow-hidden"
-      style={{
-        background: 'linear-gradient(180deg, #d5ecf9 0%, #e6effc 27.9%, #bdd6e5 29%, #136e94 32%, #164162 47%, #201c44 74%, #1a1939 100%)'
-      }}
-    >
-      <div className="container mx-auto px-3 sm:px-6 md:px-8 relative z-20">
+    <section id="why-us" className="iceberg-wrapper py-12 md:py-20 relative">
+      <div className="container mx-auto px-4 md:px-8 relative z-10 w-full">
 
-        {/* Aspect Ratio Canvas matching exact iceberg image dimensions (850x1024) */}
-        <div className="relative w-full max-w-4xl mx-auto aspect-[850/1024] overflow-hidden">
+        {/* Aspect Ratio Canvas matching iceberg image dimensions */}
+        <div className="relative w-full mx-auto min-h-[700px] sm:min-h-[850px] md:min-h-[1000px] flex flex-col justify-between py-6">
 
-          {/* Full Uncropped Background Image */}
-          <Image
-            src="/images/iceberg.jpg"
-            alt="Why Us Iceberg Background"
-            fill
-            className="object-cover object-center pointer-events-none z-0"
-            priority
-          />
-
-          {/* Curved Purple Dashed Line Overlay (Arcs from WHY US to right underwater section) */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 hidden sm:block" viewBox="0 0 850 1024" fill="none">
-            <path
-              d="M 270 80 C 450 15, 910 80, 620 410"
-              stroke="#5B21B6"
-              strokeWidth="3.5"
-              strokeDasharray="8 8"
-              fill="none"
+          {/* Iceberg Image in Background Center */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+            <Image
+              src="/images/iceberg-cutout.png"
+              alt="Mablab Iceberg Strategy"
+              width={1000}
+              height={1200}
+              className="iceberg-img w-auto h-[550px] sm:h-[750px] md:h-[900px] max-w-full object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.3)]"
+              priority
             />
-          </svg>
+          </div>
 
-          {/* Top Overlay Section: WHY US Title, WHAT YOU SEE & Brief -> Activity Flow */}
-          <div className="absolute top-[3.5%] left-2 sm:left-4 md:left-6 right-2 sm:right-4 md:right-6 z-30 pointer-events-auto">
+          {/* Top Section: WHY US Title, WHAT YOU SEE & Brief -> Flow Chain */}
+          <div className="relative z-30 text-center sm:text-left pt-2 pb-6">
 
             {/* Title: WHY US */}
-            <div className="mb-3.5 sm:mb-7">
-              <SectionHeading text="WHY" accentText="US" accentColor="#5B21B6" className="leading-[72px]!" />
+            <div className="mb-4 sm:mb-6">
+              <SectionHeading text="WHY" accentText="US" accentColor="#5B21B6" />
             </div>
 
             {/* Subheader: WHAT YOU SEE */}
-            <div className="mb-1.5 sm:mb-2.5">
-              <span className="para-16 text-gray-800 block uppercase font-bold">
+            <div className="mb-2">
+              <span className="para-16 text-stroke font-extrabold uppercase tracking-wider bg-white/90 backdrop-blur-xs px-3.5 py-1 border-2 border-stroke inline-block comic-shadow-sm">
                 WHAT YOU SEE
               </span>
             </div>
 
             {/* Flow Chain: Brief -> Solution -> Execution -> Launch -> Report */}
-            <div className="flex flex-wrap items-center gap-1 sm:gap-2 md:gap-2.5 max-w-full">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2.5 max-w-full mt-3">
               {[
                 { label: 'Brief', isBrief: true },
                 { label: 'Solution', isBrief: false },
@@ -112,7 +98,7 @@ export default function WhyUsSection() {
                 { label: 'Report', isBrief: false },
               ].map((step, i) => (
                 <React.Fragment key={step.label}>
-                  <div className="bg-white border-2 border-stroke odd:rotate-2 comic-shadow-sm p-3 text-stroke flex items-center gap-1 text-[11px] sm:text-xs md:text-sm font-extrabold shadow-md">
+                  <div className="bg-white border-2 border-stroke odd:rotate-1 comic-shadow-sm px-3 py-2 text-stroke flex items-center gap-1.5 text-xs sm:text-sm font-extrabold shadow-md hover:scale-105 transition-transform">
                     <IconComponent name={step.isBrief ? 'brief' : 'thunder'} className="w-4 h-4 text-danger shrink-0" />
                     <span>{step.label}</span>
                   </div>
@@ -123,38 +109,40 @@ export default function WhyUsSection() {
 
           </div>
 
-          {/* Center Overlay Text: MAB LAB THINKING (Positioned underwater across iceberg body) */}
-          <div className="absolute top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-20 w-full px-4">
-            <SectionHeading as="h3" className="font-body! text-cyan-text uppercase">
-              MAB LAB THINKING
-            </SectionHeading>
+          {/* Center Overlay Text: MAB LAB THINKING */}
+          <div className="relative z-20 text-center my-6 sm:my-10">
+            <span className="inline-block bg-[#051A2E]/90 border-2 border-cyan-400 comic-shadow-cyan px-6 py-2">
+              <SectionHeading as="h3" className="font-body! text-cyan-text uppercase text-xl sm:text-3xl font-extrabold tracking-wider m-0">
+                MAB LAB THINKING
+              </SectionHeading>
+            </span>
           </div>
 
           {/* Left Side Callouts (Desktop / Tablet Overlay mapped to iceberg left contour) */}
-          <div className="absolute left-[1%] sm:left-[3%] md:left-[4%] top-[51%] bottom-[2%] flex-col gap-18 z-30 hidden sm:flex items-start py-1">
+          <div className="absolute left-0 sm:left-1 md:left-2 top-[48%] bottom-[4%] flex-col gap-12 md:gap-16 z-30 hidden sm:flex items-start py-2">
             {leftCallouts.map((item) => (
-              <div key={item.id} className="flex items-center gap-1 sm:gap-1.5 group">
-                <div className="bg-[#121829]/95 border-2 border-cyan-400 comic-shadow-cyan text-white px-2.5 sm:px-3.5 py-1.5 group-odd:rotate-2 group-even:-rotate-2 flex items-center gap-2 text-[11px] sm:text-xs md:text-sm transition-transform hover:scale-105 hover:rotate-0 font-bold">
+              <div key={item.id} className="flex items-center gap-1.5 group">
+                <div className="bg-[#0A192F]/95 border-2 border-cyan-400 comic-shadow-cyan text-white px-3 sm:px-4 py-2 group-odd:rotate-1 group-even:-rotate-1 flex items-center gap-2 text-xs sm:text-sm transition-transform hover:scale-105 font-bold">
                   <IconComponent name={item.iconName} className="w-4.5 h-4.5 text-danger shrink-0" />
                   <span>{item.label}</span>
                 </div>
                 <div className="flex items-center">
                   <div className={`${item.lineWidth} border-b-2 border-dotted border-cyan-400`} />
-                  <div className="w-2.5 h-2.5 border-2 border-cyan-400 bg-transparent shrink-0" />
+                  <div className="w-2.5 h-2.5 border-2 border-cyan-400 bg-cyan-400 shrink-0" />
                 </div>
               </div>
             ))}
           </div>
 
           {/* Right Side Callouts (Desktop / Tablet Overlay mapped to iceberg right contour) */}
-          <div className="absolute right-[1%] sm:right-[3%] md:right-[4%] top-[54%] bottom-[2%] flex-col gap-20 z-30 hidden sm:flex items-end py-1">
+          <div className="absolute right-0 sm:right-1 md:right-2 top-[50%] bottom-[4%] flex-col gap-14 md:gap-20 z-30 hidden sm:flex items-end py-2">
             {rightCallouts.map((item) => (
-              <div key={item.id} className="flex items-center gap-1 sm:gap-1.5 group">
+              <div key={item.id} className="flex items-center gap-1.5 group">
                 <div className="flex items-center">
-                  <div className="w-2.5 h-2.5 border-2 border-purple-500 bg-purple-500 shrink-0" />
-                  <div className={`${item.lineWidth} border-b-2 border-dotted border-purple-500`} />
+                  <div className="w-2.5 h-2.5 border-2 border-purple-400 bg-purple-400 shrink-0" />
+                  <div className={`${item.lineWidth} border-b-2 border-dotted border-purple-400`} />
                 </div>
-                <div className="bg-[#121829]/95 border-2 border-purple-600 comic-shadow-purple text-white px-2.5 sm:px-3.5 py-1.5 group-odd:rotate-2 group-even:-rotate-2 flex items-center gap-2 text-[11px] sm:text-xs md:text-sm transition-transform hover:scale-105 hover:rotate-0 font-bold">
+                <div className="bg-[#0A192F]/95 border-2 border-purple-500 comic-shadow-purple text-white px-3 sm:px-4 py-2 group-odd:rotate-1 group-even:-rotate-1 flex items-center gap-2 text-xs sm:text-sm transition-transform hover:scale-105 font-bold">
                   <IconComponent name={item.iconName} className="w-4.5 h-4.5 text-danger shrink-0" />
                   <span>{item.label}</span>
                 </div>
@@ -162,12 +150,12 @@ export default function WhyUsSection() {
             ))}
           </div>
 
-          {/* Mobile Overlay Callouts Grid (Below water text for small mobile screens) */}
-          <div className="absolute bottom-2 left-2 right-2 grid grid-cols-1 gap-1 sm:hidden z-30">
+          {/* Mobile Overlay Callouts Grid (Clean responsive list for small mobile screens) */}
+          <div className="relative z-30 grid grid-cols-1 gap-2.5 sm:hidden mt-4 pb-4">
             {[...leftCallouts, ...rightCallouts].map((item, i) => (
               <div
                 key={item.id}
-                className={`bg-[#0F172A]/95 border text-white px-2 py-1 text-[10px] font-bold flex items-center gap-1.5 rounded-none ${i < 4 ? 'border-cyan-400 comic-shadow-cyan' : 'border-purple-500 comic-shadow-purple'
+                className={`bg-[#0A192F]/95 border-2 text-white px-3 py-2 text-xs font-bold flex items-center gap-2 rounded-none ${i < 4 ? 'border-cyan-400 comic-shadow-cyan' : 'border-purple-500 comic-shadow-purple'
                   }`}
               >
                 <IconComponent name={item.iconName} className="w-4 h-4 text-danger shrink-0" />
