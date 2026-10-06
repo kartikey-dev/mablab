@@ -156,10 +156,12 @@ body {
 
 @utility comic-shadow-hover {
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+
   &:hover {
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0px 0px var(--color-stroke);
   }
+
   &:active {
     transform: translate(0px, 0px);
     box-shadow: 2px 2px 0px 0px var(--color-stroke);
@@ -197,25 +199,33 @@ body {
 .iceberg-wrapper {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
+  min-height: 540px;
   /* Base Layer: Top Sky Gradient + Bottom Deep Ocean Gradient */
-  background: linear-gradient(
-    180deg,
-    #93c5fd 0%,
-    #bae6fd 20%,
-    #e0f2fe 35%,
-    #0284c7 35.1%,
-    #0369a1 50%,
-    #075985 70%,
-    #0f2f57 85%,
-    #0a192f 100%
-  );
+  background: linear-gradient(180deg,
+      #93c5fd 0%, #bae6fd 20%, #e0f2fe 39.4%, #0284c7 39.5%, #0369a1 50%, #075985 70%, #0f2f57 85%, #0a192f 100%);
+
+  @media (min-width: 640px) {
+    background: linear-gradient(180deg,
+        #93c5fd 0%, #bae6fd 20%, #e0f2fe 32.5%, #0284c7 32.6%, #0369a1 50%, #075985 70%, #0f2f57 85%, #0a192f 100%);
+    min-height: 500px;
+  }
+
+  @media(min-width: 768px) {
+    background: linear-gradient(180deg,
+        #93c5fd 0%, #bae6fd 20%, #e0f2fe 31%, #0284c7 31.1%, #0369a1 50%, #075985 70%, #0f2f57 85%, #0a192f 100%);
+    min-height: 600px;
+  }
+
+  @media (min-width:1024px) {
+    background: linear-gradient(180deg,
+        #93c5fd 0%, #bae6fd 20%, #e0f2fe 32%, #0284c7 32.1%, #0369a1 50%, #075985 70%, #0f2f57 85%, #0a192f 100%);
+    min-height: 100vh;
+  }
 }
 
 .iceberg-wrapper::before {
@@ -224,36 +234,49 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 750px;
-  height: 750px;
+  width: 550px;
+  height: 550px;
   max-width: 90vw;
   max-height: 90vw;
-  background: radial-gradient(
-    circle,
-    rgba(56, 189, 248, 0.45) 0%,
-    rgba(2, 132, 199, 0.18) 50%,
-    transparent 75%
-  );
+  background: radial-gradient(circle,
+      rgba(56, 189, 248, 0.45) 0%,
+      rgba(2, 132, 199, 0.18) 50%,
+      transparent 75%);
   pointer-events: none;
   z-index: 1;
+
+  @media (min-width: 768px) {
+    width: 750px;
+    height: 750px;
+  }
 }
 
 .iceberg-wrapper::after {
   content: "";
   position: absolute;
-  top: 35%;
   left: 0;
+  top: 39.4%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.75) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.75) 50%,
+      transparent 100%);
   box-shadow: 0 0 14px rgba(224, 242, 254, 0.9);
   pointer-events: none;
   z-index: 2;
+
+  @media (min-width: 640px) {
+    top: 32.5%;
+  }
+
+  @media (min-width:768px) {
+    top: 31%;
+  }
+
+  @media (min-width: 1024px) {
+    top: 32%;
+  }
 }
 
 .iceberg-img {
@@ -261,4 +284,30 @@ body {
   z-index: 3;
   max-width: 100%;
   height: auto;
+}
+
+/* ============================================
+   MOBILE MENU ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
 }

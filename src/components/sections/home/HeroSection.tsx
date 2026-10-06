@@ -27,27 +27,27 @@ export default function HeroSection() {
 
                         <div className="relative inline-block">
                             {/* 3 Overlapping Grayscale Avatars Floating Above "Scientists" */}
-                            <div className="absolute -top-11 right-6 sm:right-12 hidden sm:flex -space-x-3 items-center">
+                            <div className="absolute sm:-top-11 -top-9 right-6 sm:right-12 flex -space-x-3 items-center">
                                 <Image
                                     src="/images/avatar1.webp"
                                     alt="Scientist Avatar 1"
                                     width={54}
                                     height={54}
-                                    className="w-11 h-11 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
+                                    className="w-10 h-10 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
                                 />
                                 <Image
                                     src="/images/avatar2.webp"
                                     alt="Scientist Avatar 2"
                                     width={54}
                                     height={54}
-                                    className="w-11 h-11 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
+                                    className="w-10 h-10 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
                                 />
                                 <Image
                                     src="/images/avatar3.webp"
                                     alt="Scientist Avatar 3"
                                     width={54}
                                     height={54}
-                                    className="w-11 h-11 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
+                                    className="w-10 h-10 sm:w-13.5 sm:h-13.5 rounded-full border-4 border-white object-cover grayscale"
                                 />
                             </div>
 
@@ -91,7 +91,7 @@ export default function HeroSection() {
                         <span>for Your</span>
 
                         <div className="relative top-1 sm:top-2 inline-block border-2 border-stroke comic-shadow p-2 sm:p-2.5 text-left bg-white max-w-full">
-                            <span className="block text-stroke leading-none">Business Needs</span>
+                            <span className="block text-stroke leading-none max-sm:text-center">Business Needs</span>
                             <span className="block para-12 sm:para-16 text-primary mt-1.5 sm:mt-2 tracking-normal text-center font-normal">
                                 Branding, Marketing, Web Development, Market Research, Etc.
                             </span>

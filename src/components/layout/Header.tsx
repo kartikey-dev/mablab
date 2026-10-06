@@ -9,11 +9,29 @@ import { services } from '@/data/services';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileClosing, setIsMobileClosing] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [headerVisible, setHeaderVisible] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const lastScrollY = useRef(0);
+
+  const handleCloseMobileMenu = () => {
+    setIsMobileClosing(true);
+    setTimeout(() => {
+      setMobileMenuOpen(false);
+      setIsMobileClosing(false);
+    }, 250);
+  };
+
+  const handleToggleMobileMenu = () => {
+    if (mobileMenuOpen) {
+      handleCloseMobileMenu();
+    } else {
+      setIsMobileClosing(false);
+      setMobileMenuOpen(true);
+    }
+  };
 
   // Lock body scrolling & hide scrollbar when Mega Menu or Mobile Menu is open
   useEffect(() => {
@@ -134,15 +152,15 @@ export default function Header() {
 
           {/* Mobile Hamburger Button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-stroke focus:outline-none"
+            onClick={handleToggleMobileMenu}
+            className="md:hidden p-2 text-stroke focus:outline-none z-50"
             aria-label="Toggle menu"
           >
             <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              {mobileMenuOpen && !isMobileClosing ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
@@ -211,67 +229,119 @@ export default function Header() {
           </div>
         )}
 
-        {/* MOBILE MENU DROPDOWN */}
+        {/* FULL-HEIGHT ANIMATED MOBILE MENU DROPDOWN */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-background-light border-t-2 border-stroke px-6 py-4 space-y-4 max-h-[80vh] overflow-y-auto">
-            {/* Expandable Services Accordion */}
-            <div>
+          <div
+            className={`md:hidden fixed inset-x-0 top-[76px] sm:top-[84px] bottom-0 w-full h-[calc(100dvh-76px)] sm:h-[calc(100dvh-84px)] bg-background-light z-40 flex flex-col justify-between overflow-y-auto px-6 py-6 border-t-4 border-stroke comic-shadow-lg transition-all duration-300 ${
+              isMobileClosing
+                ? 'opacity-0 -translate-y-6 pointer-events-none'
+                : 'opacity-100 translate-y-0 pointer-events-auto'
+            }`}
+          >
+            <div className="space-y-4 pt-2">
+
+              {/* Item 1: Expandable Services Accordion */}
               <div
-                className="flex items-center justify-between para-16 text-stroke py-2 cursor-pointer"
-                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="transition-all duration-300"
+                style={{
+                  animation: 'fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) 40ms both',
+                }}
               >
-                <span className="hover:text-primary">Services</span>
-                <button className="p-1 focus:outline-none" aria-label="Toggle services sub-menu">
-                  <svg
-                    className={`w-5 h-5 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
+                <div
+                  className="flex items-center justify-between para-18 text-stroke py-3 border-b-2 border-stroke/20 cursor-pointer font-bold select-none"
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                >
+                  <span className="hover:text-primary transition-colors">Services</span>
+                  <button className="p-1 focus:outline-none" aria-label="Toggle services sub-menu">
+                    <svg
+                      className={`w-5 h-5 transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180 text-primary' : ''}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </div>
+
+                {mobileServicesOpen && (
+                  <div className="pl-3 pt-3 space-y-2.5 border-l-4 border-primary my-2.5 max-h-[45vh] overflow-y-auto">
+                    {services.map((service, index) => (
+                      <Link
+                        key={service.id}
+                        href={`/services/${service.id}`}
+                        onClick={handleCloseMobileMenu}
+                        className="flex items-center gap-3 para-14 text-stroke hover:text-primary py-1.5 transition-all group"
+                        style={{
+                          animation: `fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${index * 35}ms both`,
+                        }}
+                      >
+                        <div className="w-7 h-7 bg-white border border-stroke flex items-center justify-center shrink-0 group-hover:border-primary">
+                          <IconComponent name={service.icon as ServiceIconName} className="w-4 h-4 text-danger" />
+                        </div>
+                        <span className="font-bold group-hover:text-primary">{service.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
-              {mobileServicesOpen && (
-                <div className="pl-4 pt-2 space-y-2.5 border-l-2 border-primary my-2">
-                  {services.map((service) => (
-                    <Link
-                      key={service.id}
-                      href={`/services/${service.id}`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center gap-2.5 para-14 text-gray-700 hover:text-primary py-1"
-                    >
-                      <IconComponent name={service.icon as ServiceIconName} className="w-4 h-4 text-danger shrink-0" />
-                      <span>{service.name}</span>
-                    </Link>
-                  ))}
-                </div>
-              )}
+              {/* Item 2: Why Us Link */}
+              <div
+                className="transition-all duration-300"
+                style={{
+                  animation: 'fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) 90ms both',
+                }}
+              >
+                <Link
+                  href="/why-us"
+                  onClick={handleCloseMobileMenu}
+                  className="block para-18 font-bold text-stroke py-3 border-b-2 border-stroke/20 hover:text-primary transition-colors"
+                >
+                  Why Us
+                </Link>
+              </div>
+
+              {/* Item 3: Contact Link */}
+              <div
+                className="transition-all duration-300"
+                style={{
+                  animation: 'fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) 140ms both',
+                }}
+              >
+                <Link
+                  href="/contact"
+                  onClick={handleCloseMobileMenu}
+                  className="block para-18 font-bold text-stroke py-3 border-b-2 border-stroke/20 hover:text-primary transition-colors"
+                >
+                  Contact
+                </Link>
+              </div>
+
             </div>
 
-            <Link
-              href="/why-us"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block para-16 text-stroke"
+            {/* Bottom Footer Section inside Mobile Menu */}
+            <div
+              className="mt-6 space-y-4 pt-4 border-t-2 border-stroke"
+              style={{
+                animation: 'fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) 190ms both',
+              }}
             >
-              Why Us
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block para-16 text-stroke"
-            >
-              Contact
-            </Link>
-            <Button
-              href="/contact"
-              variant="secondary"
-              fullWidth
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Let&apos;s Talk!
-            </Button>
+              <Button
+                href="/contact"
+                variant="secondary"
+                fullWidth
+                onClick={handleCloseMobileMenu}
+                className="py-4! text-base font-bold shadow-md"
+              >
+                Let&apos;s Talk!
+              </Button>
+
+              <div className="flex items-center justify-between text-xs text-gray-500 pt-1 font-mono">
+                <span>© 2026 MAB LAB</span>
+                <a href="mailto:hello@mablab.in" className="hover:text-primary transition-colors">hello@mablab.in</a>
+              </div>
+            </div>
           </div>
         )}
       </header>

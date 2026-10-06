@@ -22,12 +22,12 @@ export default function StoryCard({
       role="article"
     >
       {/* Large Watermark Number above card title */}
-      <div className="text-5xl md:text-[80px] font-body font-black text-stroke/5 absolute -top-16 select-none pointer-events-none">
+      <div className="text-5xl md:text-[80px] font-body font-black text-stroke/5 absolute sm:-top-16 -top-6 select-none pointer-events-none">
         {number}
       </div>
 
       <div>
-        <h3 className="text-[32px] font-heading font-bold text-stroke uppercase leading-tight md:mb-24 mb-8 max-w-11/12">
+        <h3 className="md:text-[32px] text-2xl font-heading font-bold text-stroke uppercase leading-tight md:mb-24 mb-8 max-w-11/12">
           {title}
         </h3>
         <p className="para-16 text-gray-500 font-normal!">
