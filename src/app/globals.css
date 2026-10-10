@@ -202,30 +202,9 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  min-height: 540px;
-  /* Base Layer: Top Sky Gradient + Bottom Deep Ocean Gradient */
-  background: linear-gradient(180deg,
-      #93c5fd 0%, #bae6fd 20%, #e0f2fe 39.4%, #0284c7 39.5%, #0369a1 50%, #075985 70%, #0f2f57 85%, #0a192f 100%);
-
-  @media (min-width: 640px) {
-    background: linear-gradient(180deg,
-        #93c5fd 0%, #bae6fd 20%, #e0f2fe 32.5%, #0284c7 32.6%, #0369a1 50%, #075985 70%, #0f2f57 85%, #0a192f 100%);
-    min-height: 500px;
-  }
-
-  @media(min-width: 768px) {
-    background: linear-gradient(180deg,
-        #93c5fd 0%, #bae6fd 20%, #e0f2fe 31%, #0284c7 31.1%, #0369a1 50%, #075985 70%, #0f2f57 85%, #0a192f 100%);
-    min-height: 600px;
-  }
-
-  @media (min-width:1024px) {
-    background: linear-gradient(180deg,
-        #93c5fd 0%, #bae6fd 20%, #e0f2fe 32%, #0284c7 32.1%, #0369a1 50%, #075985 70%, #0f2f57 85%, #0a192f 100%);
-    min-height: 100vh;
-  }
+  /* Base Sky Layer Gradient */
+  background: linear-gradient(180deg, #93c5fd 0%, #bae6fd 40%, #e0f2fe 100%);
 }
 
 .iceberg-wrapper::before {
@@ -248,34 +227,6 @@ body {
   @media (min-width: 768px) {
     width: 750px;
     height: 750px;
-  }
-}
-
-.iceberg-wrapper::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 39.4%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.75) 50%,
-      transparent 100%);
-  box-shadow: 0 0 14px rgba(224, 242, 254, 0.9);
-  pointer-events: none;
-  z-index: 2;
-
-  @media (min-width: 640px) {
-    top: 32.5%;
-  }
-
-  @media (min-width:768px) {
-    top: 31%;
-  }
-
-  @media (min-width: 1024px) {
-    top: 32%;
   }
 }
 
