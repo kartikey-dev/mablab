@@ -15,9 +15,9 @@ export default function BeliefsSection() {
     <section className="bg-background-light py-16 md:py-[90px]">
       <div className="container mx-auto px-4 md:px-8">
 
-        <SectionHeading text="WHAT WE" accentText="BELIEVE" accentColor="primary" className="mb-2" />
+        <SectionHeading text="What We" accentText="Believe" accentColor="primary" className="mb-2 capitalize" />
 
-        <p className="para-24 text-secondary uppercase mb-1">DEPTH BUILDS TRUST</p>
+        <p className="card-title font-heading para-24 font-bold text-secondary capitalize mb-1">Depth Builds Trust</p>
         <p className="para-16 text-stroke font-normal mb-6">It&apos;s the belief behind everything we do.</p>
 
         <hr className="border-t-2 border-stroke mb-8" />
@@ -29,7 +29,7 @@ export default function BeliefsSection() {
               key={i}
               className="flex items-center gap-4 border-2 border-stroke comic-shadow p-5 bg-white"
             >
-              <span className="text-primary font-heading font-extrabold text-xl min-w-[40px]">
+              <span className="text-primary font-heading font-bold text-xl min-w-[40px]">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <p className="para-18 text-stroke">{belief}</p>
@@ -39,10 +39,10 @@ export default function BeliefsSection() {
 
         {/* Core Synthesis — #07 */}
         <div className="bg-primary border-2 border-stroke comic-shadow p-6 md:p-8 flex items-start gap-4">
-          <span className="text-cyan-text font-heading font-extrabold text-xl min-w-[40px]">07</span>
+          <span className="text-cyan-text font-heading font-bold text-xl min-w-[40px]">07</span>
           <div>
-            <span className="para-12 text-cyan-text tracking-widest mb-1 block">CORE SYNTHESIS</span>
-            <p className="para-24 text-white font-extrabold leading-relaxed">
+            <span className="para-12 text-cyan-text tracking-widest mb-1 block capitalize font-bold">Core Synthesis</span>
+            <p className="para-24 text-white font-bold leading-relaxed">
               And we believe the best results come from thinking first and moving with purpose.
             </p>
           </div>

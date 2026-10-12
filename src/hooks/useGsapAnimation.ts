@@ -38,13 +38,13 @@ export function useGsapAnimation<T extends HTMLElement>(
     if (disabled || !ref.current) return;
 
     const el = ref.current;
-    let tween: gsap.core.Tween;
 
     const initialProps: gsap.TweenVars = {};
     const animateProps: gsap.TweenVars = {
       duration,
       delay,
       ease: 'power3.out',
+      clearProps: 'transform',
       scrollTrigger: {
         trigger: el,
         start: triggerStart,
@@ -85,7 +85,7 @@ export function useGsapAnimation<T extends HTMLElement>(
     }
 
     gsap.set(el, initialProps);
-    tween = gsap.to(el, animateProps);
+    const tween = gsap.to(el, animateProps);
 
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();

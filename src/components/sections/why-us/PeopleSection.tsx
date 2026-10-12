@@ -17,7 +17,7 @@ export default function PeopleSection() {
     <section className="bg-background-light py-16 md:py-[90px]">
       <div className="container mx-auto px-4 md:px-8">
 
-        <SectionHeading text="THE PEOPLE" accentText="BEHIND THE LAB" accentColor="primary" className="mb-6" />
+        <SectionHeading text="The People" accentText="Behind The Lab" accentColor="primary" className="mb-6 capitalize" />
 
         <p className="text-xl text-stroke font-normal leading-relaxed mb-6 sm:w-3/4">
           MAB Lab brings together people from different disciplines, backgrounds, and areas of expertise.

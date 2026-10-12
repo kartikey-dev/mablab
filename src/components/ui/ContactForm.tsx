@@ -49,7 +49,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
       <FormField
-        label="NAME"
+        label="Name"
         name="name"
         placeholder="name"
         value={formData.name}
@@ -57,7 +57,7 @@ export default function ContactForm() {
         required
       />
       <FormField
-        label="EMAIL"
+        label="Email"
         name="email"
         type="email"
         placeholder="email@company.com"
@@ -66,7 +66,7 @@ export default function ContactForm() {
         required
       />
       <FormField
-        label="NUMBER"
+        label="Number"
         name="number"
         type="tel"
         placeholder="phone number"
@@ -74,14 +74,14 @@ export default function ContactForm() {
         onChange={handleChange}
       />
       <FormField
-        label="COMPANY NAME"
+        label="Company Name"
         name="companyName"
         placeholder="Company Name"
         value={formData.companyName}
         onChange={handleChange}
       />
       <FormField
-        label="CALENDLY LINK"
+        label="Calendly Link"
         name="calendlyLink"
         placeholder="Calendly link"
         value={formData.calendlyLink}
@@ -93,14 +93,14 @@ export default function ContactForm() {
         disabled={isSubmitting}
         variant="secondary"
         fullWidth
-        className="mt-6 py-3.5 px-6 font-normal!"
+        className="mt-6 py-3.5 px-6 font-bold capitalize"
         icon={
           <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 16V0L19 8L0 16ZM2 13L13.85 8L2 3V6.5L8 8L2 9.5V13ZM2 13V8V3V6.5V9.5V13Z" fill="white" />
           </svg>
         }
       >
-        {isSubmitting ? 'SENDING...' : "LET'S TALK!"}
+        {isSubmitting ? 'Sending...' : "Let's Talk"}
       </Button>
 
       {submitStatus === 'success' && (

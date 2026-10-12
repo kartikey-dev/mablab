@@ -35,7 +35,7 @@ export default function TeamCard({
       </div>
 
       {/* Member Name */}
-      <h3 className="para-18 text-stroke uppercase">
+      <h3 className="card-title font-heading para-24 font-bold text-stroke capitalize">
         {name}
       </h3>
 

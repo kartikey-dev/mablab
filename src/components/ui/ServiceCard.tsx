@@ -29,7 +29,7 @@ export default function ServiceCard({
         <div className="text-red-500">
           <IconComponent name={icon as ServiceIconName} className="w-7 h-7 text-red-500" />
         </div>
-        <h3 className="font-heading text-xl font-bold text-stroke uppercase leading-tight">
+        <h3 className="font-heading para-24 font-bold text-stroke capitalize leading-tight">
           {name}
         </h3>
         <p className="para-14 text-gray-700 font-medium normal-case leading-snug">
@@ -48,7 +48,7 @@ export default function ServiceCard({
 
           {/* Row 2: Heading (Default bottom slot -> Moves to top slot on hover) */}
           <div className="h-12 flex items-center">
-            <h3 className="font-heading text-2xl font-bold text-stroke uppercase leading-none">
+            <h3 className="font-heading para-24 font-bold text-stroke capitalize leading-none">
               {name}
             </h3>
           </div>

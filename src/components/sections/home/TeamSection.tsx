@@ -17,11 +17,11 @@ export default function TeamSection() {
     <section id="team" className="bg-background-light py-16 md:py-[90px] relative">
       <div className="container mx-auto px-4 md:px-8">
 
-        {/* Title: LAB RUNNERS */}
+        {/* Title: Lab Runners */}
         <div className="mb-8">
           <SectionHeading
-            text="LAB"
-            accentText="RUNNERS"
+            text="Lab"
+            accentText="Runners"
             accentColor="primary"
           />
         </div>

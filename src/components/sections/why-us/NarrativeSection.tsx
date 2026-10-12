@@ -6,7 +6,7 @@ export default function NarrativeSection() {
     <section className="bg-background-light py-16 md:py-[90px]">
       <div className="container mx-auto px-4 md:px-8">
 
-        <SectionHeading text="OUR" accentText="STORY" accentColor="primary" className="mb-10" />
+        <SectionHeading text="Our" accentText="Story" accentColor="primary" className="mb-10 capitalize" />
 
         {/* Main Story Block */}
         <div className="border-2 border-stroke comic-shadow p-8 md:p-10 mb-10">
@@ -27,7 +27,7 @@ export default function NarrativeSection() {
 
             <hr className='border-t border-dashed border-[#D1D5DB]' />
 
-            <span className="para-12 text-gray-500 tracking-widest mt-4 mb-2 block">DYNAMIC MATRIX :</span>
+            <span className="para-12 text-gray-500 tracking-widest mt-4 mb-2 block capitalize font-bold">Dynamic Matrix :</span>
 
             <p className="para-18 text-stroke font-normal leading-relaxed mb-4">
               We&apos;re a tight bunch of people who are passionate about solving marketing and branding challenges. Technology. AI. Platforms. Trends. Tools.

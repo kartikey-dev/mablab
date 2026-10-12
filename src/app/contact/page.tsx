@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactHeroSection from '@/components/sections/contact/ContactHeroSection';
+import GsapSection from '@/components/ui/GsapSection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,6 +10,6 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <ContactHeroSection />
+    <GsapSection animation="fadeInUp"><ContactHeroSection /></GsapSection>
   );
 }

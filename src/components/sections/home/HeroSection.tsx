@@ -22,7 +22,7 @@ export default function HeroSection() {
                 <h1 className="max-w-4xl mx-auto mb-10 sm:mb-12">
 
                     {/* Line 1: Marketing Scientists with Avatars above Scientists */}
-                    <div className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 gap-y-2 text-stroke tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold">
+                    <div className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 gap-y-2 text-stroke tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold capitalize">
                         <span>Marketing</span>
 
                         <div className="relative inline-block">
@@ -87,7 +87,7 @@ export default function HeroSection() {
                     </div>
 
                     {/* Line 2: for Your Business Needs inside Double-Bordered Container */}
-                    <div className="mt-3 sm:mt-4 relative flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-stroke text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold">
+                    <div className="mt-3 sm:mt-4 relative flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-stroke text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold capitalize">
                         <span>for Your</span>
 
                         <div className="relative top-1 sm:top-2 inline-block border-2 border-stroke comic-shadow p-2 sm:p-2.5 text-left bg-white max-w-full">
@@ -101,8 +101,8 @@ export default function HeroSection() {
 
                 {/* CTA Button */}
                 <div className="mb-10 sm:mb-14">
-                    <Button href="#contact" variant="secondary" size="lg" showArrow>
-                        LET&apos;S TALK!
+                    <Button href="#contact" variant="secondary" size="lg" showArrow className="capitalize font-bold">
+                        Let&apos;s Talk!
                     </Button>
                 </div>
 
@@ -161,7 +161,7 @@ export default function HeroSection() {
                                     No decisions based on assumptions or trends.
                                 </p>
                                 <div className="absolute inset-x-0 top-8 pt-1 border-t-2 border-red-500 flex items-center justify-center rotate-[-4deg]">
-                                    <span className="para-16 text-red-500 font-extrabold tracking-widest uppercase">
+                                    <span className="para-16 text-red-500 font-extrabold tracking-widest">
                                         ELIMINATED
                                     </span>
                                 </div>
@@ -175,14 +175,14 @@ export default function HeroSection() {
 
                         {/* Tab 1: GROUNDWORK */}
                         <div
-                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'groundwork' ? 'bg-purple-50' : ''
+                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading cursor-pointer transition-colors ${hoveredTab === 'groundwork' ? 'bg-purple-50' : ''
                                 }`}
                             onMouseEnter={() => setHoveredTab('groundwork')}
                             onMouseLeave={() => setHoveredTab(null)}
                         >
                             <div className="flex items-center justify-center gap-3 text-xl sm:text-2xl">
                                 <GroundworkIcon />
-                                <span>GROUNDWORK</span>
+                                <span>Groundwork</span>
                             </div>
 
                             {/* Mobile Open Explanation Box */}
@@ -198,14 +198,14 @@ export default function HeroSection() {
 
                         {/* Tab 2: FRAMEWORKS */}
                         <div
-                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'frameworks' ? 'bg-cyan-50' : ''
+                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading cursor-pointer transition-colors ${hoveredTab === 'frameworks' ? 'bg-cyan-50' : ''
                                 }`}
                             onMouseEnter={() => setHoveredTab('frameworks')}
                             onMouseLeave={() => setHoveredTab(null)}
                         >
                             <div className="flex items-center justify-center gap-3 text-xl sm:text-2xl">
                                 <FrameworksIcon />
-                                <span>FRAMEWORKS</span>
+                                <span>Frameworks</span>
                             </div>
 
                             {/* Mobile Open Explanation Box */}
@@ -221,14 +221,14 @@ export default function HeroSection() {
 
                         {/* Tab 3: GUESSWORK */}
                         <div
-                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading uppercase cursor-pointer transition-colors ${hoveredTab === 'guesswork' ? 'bg-red-50' : 'bg-[#D0DBED]/30'
+                            className={`p-4 sm:p-6 flex flex-col items-center justify-center gap-2 text-primary font-bold font-heading cursor-pointer transition-colors ${hoveredTab === 'guesswork' ? 'bg-red-50' : 'bg-[#D0DBED]/30'
                                 }`}
                             onMouseEnter={() => setHoveredTab('guesswork')}
                             onMouseLeave={() => setHoveredTab(null)}
                         >
                             <div className="flex items-center justify-center gap-3 text-xl sm:text-2xl">
                                 <GuessworkIcon />
-                                <span className="line-through decoration-[#6B7280] decoration-2 text-[#6B7280]">GUESSWORK</span>
+                                <span className="line-through decoration-[#6B7280] decoration-2 text-[#6B7280]">Guesswork</span>
                             </div>
 
                             {/* Mobile Open Explanation Box */}
@@ -239,7 +239,7 @@ export default function HeroSection() {
                                 <p className="para-14 text-gray-400 font-normal normal-case leading-relaxed line-through">
                                     No decisions based on assumptions or trends.
                                 </p>
-                                <span className="inline-block mt-1 para-12 text-red-500 font-extrabold tracking-widest uppercase">
+                                <span className="inline-block mt-1 para-12 text-red-500 font-extrabold tracking-widest">
                                     ELIMINATED
                                 </span>
                             </div>

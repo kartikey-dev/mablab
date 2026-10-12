@@ -26,26 +26,26 @@ export default function ContactSection() {
 
           {/* Left Column: Heading + Shortcut vs Mab Lab Comparison Cards */}
           <div ref={leftRef}>
-            <h2 className="text-3xl sm:text-5xl md:text-[56px] font-extrabold font-heading text-stroke leading-tight md:leading-none mb-8">
-              STILL DOING THE <br className="hidden sm:inline" />
-              <span className="text-[#D0DBED]">SHORTCUT-</span> <br className="hidden sm:inline" />
-              <span className="text-[#D0DBED]">MARKETING?</span>
+            <h2 className="heading-mablab mb-8">
+              Still Doing The <br className="hidden sm:inline" />
+              <span className="text-[#D0DBED]">Shortcut-</span>
+              <span className="text-[#D0DBED]">Marketing?</span>
             </h2>
 
             <div className="border-2 border-stroke comic-shadow overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[300px]">
                 <thead>
                   <tr>
-                    <th className="bg-[#D0DBED]/30 border-b-2 border-r-2 border-stroke p-3 sm:p-4 font-heading text-gray-600 text-xs sm:text-sm uppercase tracking-wider">
+                    <th className="bg-[#D0DBED]/30 border-b-2 border-r-2 border-stroke p-3 sm:p-4 para-18 text-gray-500">
                       <div className="flex items-center gap-2">
-                        <IconComponent name="warning-triangle" className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500 shrink-0" />
+                        <IconComponent name="warning-triangle" className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                         <span>Shortcut Marketing</span>
                       </div>
                     </th>
-                    <th className="bg-primary border-b-2 border-stroke p-3 sm:p-4 font-heading text-white text-xs sm:text-sm uppercase tracking-wider">
+                    <th className="bg-primary border-b-2 border-stroke p-3 sm:p-4 para-18 text-white">
                       <div className="flex items-center gap-2">
                         <IconComponent name="mablab-seal" className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
-                        <span>MAB LAB</span>
+                        <span>MAB Lab</span>
                       </div>
                     </th>
                   </tr>

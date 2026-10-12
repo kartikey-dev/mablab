@@ -12,6 +12,12 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "coverage/**",
+    "*.js",
+    "copy_assets.js",
+    "copy_images_favicons.js",
+    "create_favicons.js",
+    "jest.config.js",
   ]),
 ]);
 

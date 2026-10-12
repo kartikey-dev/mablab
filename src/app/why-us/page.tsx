@@ -7,6 +7,13 @@ import BeliefsSection from '@/components/sections/why-us/BeliefsSection';
 import DualCardSection from '@/components/sections/why-us/DualCardSection';
 import CTABannerSection from '@/components/sections/why-us/CTABannerSection';
 import GsapSection from '@/components/ui/GsapSection';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About MAB Lab | Marketing Built on Depth & Understanding',
+  description:
+    'MAB Lab is a strategy-led marketing business built around research, understanding and zero-shortcut marketing.',
+};
 
 export default function WhyUsPage() {
   return (

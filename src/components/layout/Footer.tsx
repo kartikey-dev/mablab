@@ -4,6 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { useCta } from '@/context/CtaContext';
+import LetsTalkBanner from '@/components/sections/shared/LetsTalkBanner';
+import { defaultCtaData } from '@/data/ctaData';
+
 const servicesCol1 = [
   { name: 'Branding', href: '/services/branding' },
   { name: 'Web Development', href: '/services/web-development' },
@@ -22,9 +26,40 @@ const servicesCol2 = [
   { name: 'Marketing Consultancy', href: '/services/marketing-consultancy' },
 ];
 
-export default function Footer() {
+export interface FooterProps {
+  showCta?: boolean;
+  ctaHeading?: React.ReactNode;
+  ctaDescription?: string;
+  ctaButtonText?: string;
+  ctaButtonHref?: string;
+}
+
+export default function Footer({
+  showCta: propShowCta,
+  ctaHeading: propHeading,
+  ctaDescription: propDescription,
+  ctaButtonText: propButtonText,
+  ctaButtonHref: propButtonHref,
+}: FooterProps = {}) {
+  const ctaCtx = useCta();
+  const ctaData = ctaCtx?.cta || defaultCtaData;
+
+  const showCta = propShowCta !== undefined ? propShowCta : (ctaData.showCta ?? true);
+  const heading = propHeading !== undefined ? propHeading : (ctaData.heading || defaultCtaData.heading);
+  const description = propDescription !== undefined ? propDescription : (ctaData.description ?? defaultCtaData.description);
+  const buttonText = propButtonText !== undefined ? propButtonText : (ctaData.buttonText || defaultCtaData.buttonText);
+  const buttonHref = propButtonHref !== undefined ? propButtonHref : (ctaData.buttonHref || defaultCtaData.buttonHref);
+
   return (
-    <footer className="bg-background-light pt-24 md:pt-36 pb-6 border-t-4 border-stroke relative z-10">
+    <footer className={`bg-background-light pb-6 border-t-4 border-stroke relative z-10 ${showCta ? 'pt-0' : 'pt-16 md:pt-24'}`}>
+      {showCta && (
+        <LetsTalkBanner
+          heading={heading}
+          description={description}
+          buttonText={buttonText}
+          buttonHref={buttonHref}
+        />
+      )}
       <div className="container mx-auto px-4 md:px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_2fr] gap-8 mb-10">

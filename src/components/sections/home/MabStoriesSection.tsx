@@ -22,15 +22,15 @@ export default function MabStoriesSection() {
         {/* Top Header Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-28 gap-6">
           <div>
-            <SectionHeading text="MAB" accentText="STORIES" accentColor="primary" />
+            <SectionHeading text="Mab" accentText="Stories" accentColor="primary" />
             <p className="para-18 text-gray-500 mt-2 font-normal!">
               Marketing and branding inspiration, research, tips and more...
             </p>
           </div>
 
           <div>
-            <Button href="#" variant="secondary" size="md">
-              VIEW ALL STORIES
+            <Button href="#" variant="secondary" size="md" className="capitalize font-bold">
+              View All Stories
             </Button>
           </div>
         </div>

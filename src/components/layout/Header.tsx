@@ -178,8 +178,7 @@ export default function Header() {
 
               {/* Header inside Mega Menu */}
               <div className="border-b-2 border-gray-100 pb-4 mb-6">
-                <span className="para-12 text-primary">EXPERIMENTAL FORMULAS</span>
-                <h3 className="heading-h3 text-stroke mt-0.5">OUR 12 SCIENTIFIC SERVICES</h3>
+                <h3 className="heading-h3 text-stroke capitalize">Our 12 Scientific Services</h3>
               </div>
 
               {/* 4 Columns x 3 Rows Grid of Services */}

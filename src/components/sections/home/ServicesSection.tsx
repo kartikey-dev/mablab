@@ -24,9 +24,9 @@ export default function ServicesSection() {
 
       <div className="container mx-auto px-4 md:px-8 relative z-20">
 
-        {/* Title: SERVICES */}
+        {/* Title: Services */}
         <div className="mb-8">
-          <SectionHeading accentText="SERVICES" accentColor="primary" />
+          <SectionHeading accentText="Services" accentColor="primary" />
         </div>
 
         {/* 3 columns x 4 rows Grid */}

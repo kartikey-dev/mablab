@@ -3,7 +3,11 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, calendly } = body;
+    const name = body.name;
+    const email = body.email;
+    const phone = body.phone || body.number || '';
+    const company = body.company || body.companyName || '';
+    const calendly = body.calendly || body.calendlyLink || '';
 
     if (!name || !email) {
       return NextResponse.json(
@@ -12,11 +16,12 @@ export async function POST(request: Request) {
       );
     }
 
-    // Target email recipient specified by user: hello@kumarkartikey.com
-    const recipientEmail = 'hello@kumarkartikey.com';
+    // Target email recipient specified by user: hello@mablab.in
+    const recipientEmail = 'hello@mablab.in';
 
     // Log the submission payload (in production, integrate with nodemailer, Resend, or SendGrid API)
     console.log(`[Mablab Contact Form] New Inquiry received for ${recipientEmail}:`, {
+      recipient: recipientEmail,
       name,
       email,
       phone,

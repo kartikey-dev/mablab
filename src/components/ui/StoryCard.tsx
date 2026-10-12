@@ -27,7 +27,7 @@ export default function StoryCard({
       </div>
 
       <div>
-        <h3 className="md:text-[32px] text-2xl font-heading font-bold text-stroke uppercase leading-tight md:mb-24 mb-8 max-w-11/12">
+        <h3 className="card-title font-heading para-24 font-bold text-stroke capitalize leading-tight md:mb-24 mb-8 max-w-11/12">
           {title}
         </h3>
         <p className="para-16 text-gray-500 font-normal!">

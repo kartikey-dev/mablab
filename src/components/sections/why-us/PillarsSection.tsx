@@ -6,7 +6,7 @@ export default function PillarsSection() {
     <section className="bg-background-light py-16 md:py-[90px]">
       <div className="container mx-auto px-4 md:px-8">
 
-        <SectionHeading text="WHO" accentText="WE ARE" accentColor="primary" className="mb-10" />
+        <SectionHeading text="Who" accentText="We Are" accentColor="primary" className="mb-10 capitalize" />
 
         {/* Purple Banner */}
         <div className="bg-primary border-2 border-stroke comic-shadow p-6 md:p-12 mb-10">

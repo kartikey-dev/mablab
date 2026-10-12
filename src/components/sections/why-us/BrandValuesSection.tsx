@@ -14,17 +14,17 @@ export interface BrandValuesSectionProps {
 
 const defaultItems: BrandValueItem[] = [
   {
-    label: 'BRAND VISION',
+    label: 'Brand Vision',
     quote: 'A world where businesses make better decisions because they understand their customers, markets, and opportunities more deeply.',
     description: 'We envision a future where marketing is less about chasing attention and more about creating understanding. Where businesses replace assumptions with insight, noise with clarity, and shortcuts with thoughtful strategy.',
   },
   {
-    label: 'BRAND MISSION',
+    label: 'Brand Mission',
     quote: 'To help ambitious businesses build trust through deeper understanding.',
     description: 'We do this by combining research, strategy, creativity, and systems thinking to uncover what matters, simplify complexity, and create marketing that is clear, useful, and effective.',
   },
   {
-    label: 'BRAND PROMISE',
+    label: 'Brand Promise',
     quote: "We won't give you more noise. We'll help you understand what matters.",
     description: 'Every engagement, recommendation, design, strategy, and system we create is built to reduce uncertainty, increase clarity, and help you make better decisions with confidence.',
   },

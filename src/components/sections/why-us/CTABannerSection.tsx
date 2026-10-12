@@ -1,17 +1,19 @@
 import React from 'react';
-import LetsTalkBanner from '@/components/sections/shared/LetsTalkBanner';
+import { PageCta } from '@/context/CtaContext';
+import { whyUsCtaData } from '@/data/ctaData';
 
 export default function CTABannerSection() {
   return (
-    <section className="bg-background-light pt-16 md:pt-[90px] pb-12 relative overflow-visible">
-      <div className="container mx-auto px-4 md:px-8 mb-10">
+    <section className="bg-background-light pt-16 md:pt-[90px] pb-24 md:pb-32 relative overflow-visible">
+      <PageCta {...whyUsCtaData} />
+      <div className="container mx-auto px-4 md:px-8">
 
         {/* The Lab Is Always Open Card */}
         <div className="border-2 border-stroke comic-shadow p-8 md:p-12">
-          <h2 className="heading-mablab mb-6">
-            <span className="text-stroke">THE LAB IS </span>
-            <span className="text-primary">ALWAYS </span>
-            <span className="text-stroke">OPEN</span>
+          <h2 className="heading-mablab mb-6 capitalize">
+            <span className="text-stroke">The Lab Is </span>
+            <span className="text-primary">Always </span>
+            <span className="text-stroke">Open</span>
           </h2>
 
           <p className="text-xl text-stroke mb-3 sm:w-2/3">
@@ -32,12 +34,6 @@ export default function CTABannerSection() {
         </div>
 
       </div>
-
-      {/* Overlapping Footer Purple Banner */}
-      <LetsTalkBanner
-        heading="LET'S TALK!"
-        description="Ready to replace guesswork with strategic rigor? Let's build your scientific growth engine together."
-      />
     </section>
   );
 }

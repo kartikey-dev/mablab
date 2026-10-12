@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface ServiceDetailData {
   id: string;
   name: string;
@@ -29,9 +27,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Be ',
     heroLine2AccentWord: 'remembered',
     heroLine2Suffix: ' for it.',
-    metaTitle: 'Branding Services | Mablab — Be Known & Remembered',
+    metaTitle: 'Branding | Positioning, Messaging & Identity | MAB Lab',
     metaDescription:
-      'Strategic positioning, messaging, visual identity systems, and brand guidelines engineered to turn your company into an enduring market leader.',
+      'Build a brand people understand, remember and choose. MAB Lab helps with positioning, messaging, identity systems and brand guidelines.',
     tagline: 'Positioning, messaging, identity systems and brand guidelines.',
     overview:
       'Branding isn’t just a logo or a color palette. It’s the enduring repository of your reputation, distinction, and clear meaning in the minds of your audience.',
@@ -72,9 +70,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Built for ',
     heroLine2AccentWord: 'speed',
     heroLine2Suffix: ' & scale.',
-    metaTitle: 'Web Development Services | Mablab — Custom Websites & E-Commerce',
+    metaTitle: 'Web Development | Websites, E-commerce & CMS | MAB Lab',
     metaDescription:
-      'High-performance web development, custom Next.js applications, e-commerce platforms, and seamless CMS integrations.',
+      'Build websites that work for your business. From websites and e-commerce to CMS and custom integrations, we build with strategy in mind.',
     tagline: 'Websites, e-commerce stores, CMS and custom integrations.',
     overview:
       'Your website is your primary digital asset. We engineer fast, responsive, conversion-focused websites that communicate authority.',
@@ -115,9 +113,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Zero ',
     heroLine2AccentWord: 'shortcuts',
     heroLine2Suffix: ', pure impact.',
-    metaTitle: 'Marketing Services | Mablab — Growth Campaigns & Strategy',
+    metaTitle: 'Marketing | Strategy, Campaigns & Growth | MAB Lab',
     metaDescription:
-      'Data-backed marketing campaigns, customer acquisition strategies, and revenue execution.',
+      'Marketing built to get you noticed, considered and chosen. Strategy, campaigns, demand generation, lifecycle marketing and optimisation.',
     tagline: 'Campaigns, execution, growth initiatives and marketing support.',
     overview:
       'Marketing is the honest translation of real capability to audience demand. We build sustainable growth engines.',
@@ -154,9 +152,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Build real ',
     heroLine2AccentWord: 'community',
     heroLine2Suffix: ' & trust.',
-    metaTitle: 'Social Media Strategy | Mablab — Organic & Paid Social',
+    metaTitle: 'Social Media | Strategy, Content & Community | MAB Lab',
     metaDescription:
-      'Strategic social media management, content creation, community engagement, and platform growth.',
+      'Grab attention and create connection. Social media strategy, content, community management, campaigns and founder-led social.',
     tagline: 'Content planning, community management and platform growth.',
     overview:
       'Social media is where your brand lives in public. We create authentic social content that sparks conversation and builds trust.',
@@ -193,9 +191,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Ideas that ',
     heroLine2AccentWord: 'resonate',
     heroLine2Suffix: ' & endure.',
-    metaTitle: 'Content Marketing | Mablab — Thought Leadership & Copywriting',
+    metaTitle: 'Content | Strategy, Thought Leadership & Content | MAB Lab',
     metaDescription:
-      'Research-backed content marketing, whitepapers, blog articles, sales collateral, and thought leadership.',
+      'Turn expertise into authority. Content strategy, thought leadership, editorial planning, articles, case studies, sales enablement and more.',
     tagline: 'Articles, reports, sales collateral and thought leadership.',
     overview:
       'Good content solves real problems for your customers. We produce authoritative content that positions your team as industry leaders.',
@@ -232,9 +230,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Stories that ',
     heroLine2AccentWord: 'captivate',
     heroLine2Suffix: ' audiences.',
-    metaTitle: 'Video & Podcast Production | Mablab — Brand Media',
+    metaTitle: 'Video & Podcast | Production & Distribution | MAB Lab',
     metaDescription:
-      'High-impact video production, show formats, podcast editing, and multi-channel content repurposing.',
+      'Video and audio that informs, persuades, entertains and connects. From brand films and podcasts to social videos, campaigns and distribution.',
     tagline: 'Video production, podcasts, editing and distribution.',
     overview:
       'Video and audio are the most intimate mediums for human connection. We produce high-quality shows and video assets.',
@@ -271,9 +269,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Deep ',
     heroLine2AccentWord: 'understanding',
     heroLine2Suffix: ' drives growth.',
-    metaTitle: 'Market Research Services | Mablab — Insights & Analysis',
+    metaTitle: 'Market Research | Customer, Market & Competitor Research | MAB Lab',
     metaDescription:
-      'Qualitative and quantitative market research, customer interviews, competitor analysis, and demand validation.',
+      'Understand your market before making important decisions. Customer insights, competitor analysis and market intelligence to reduce guesswork.',
     tagline: 'Customer insights, competitor analysis and market intelligence.',
     overview:
       'The biggest mistake in marketing is assuming you know what your customers want. We uncover the real truth through evidence.',
@@ -310,9 +308,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Amplify ',
     heroLine2AccentWord: 'reputation',
     heroLine2Suffix: ' at scale.',
-    metaTitle: 'PR & Influencer Marketing | Mablab — Media & Creator Partnerships',
+    metaTitle: 'PR & Influencer | Media, Thought Leadership & Creators | MAB Lab',
     metaDescription:
-      'Strategic public relations, media placements, thought leadership PR, and vetted creator partnerships.',
+      'Build awareness, authority and visibility through PR and influencer marketing, including media relations, thought leadership and creator partnerships.',
     tagline: 'Media coverage, thought leadership and creator partnerships.',
     overview:
       'Earned media builds credibility that paid ads simply cannot buy. We connect your brand with trusted voices and publications.',
@@ -349,9 +347,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Capture ',
     heroLine2AccentWord: 'demand',
     heroLine2Suffix: ' when it matters.',
-    metaTitle: 'SEO & Paid Ads Services | Mablab — Search & Performance Marketing',
+    metaTitle: 'SEO & Paid Ads | Search, Leads & Conversion | MAB Lab',
     metaDescription:
-      'Data-driven search engine optimization, Google Ads, Meta advertising, and high-converting landing pages.',
+      'Be found by the right people and convert more of them. SEO, Google Ads, social ads, campaign strategy, landing pages and performance optimisation.',
     tagline: 'Search visibility, lead generation and conversion optimization.',
     overview:
       'SEO captures intent; paid ads scale predictable reach. Together, they create a dominant search footprint for your brand.',
@@ -388,9 +386,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Crafted to ',
     heroLine2AccentWord: 'impress',
     heroLine2Suffix: ' & convert.',
-    metaTitle: 'Graphic & Digital Design Services | Mablab — Premium Design',
+    metaTitle: 'Design | Brand, Digital & Marketing Design | MAB Lab',
     metaDescription:
-      'High-end digital design, presentation decks, marketing collateral, print design, and brand design assets.',
+      'Design that helps people understand, remember and engage with your brand. Presentations, marketing assets, digital and print design.',
     tagline: 'Presentations, marketing assets, digital and print design.',
     overview:
       'Design communicates your standards before a word is read. We create premium visual assets that command respect.',
@@ -427,9 +425,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Connect ',
     heroLine2AccentWord: 'in person',
     heroLine2Suffix: ', leave a mark.',
-    metaTitle: 'Event Strategy & Production | Mablab — Experiential Marketing',
+    metaTitle: 'Events | Strategy, Planning & Production | MAB Lab',
     metaDescription:
-      'Event strategy, conference production, experiential brand activations, and audience engagement.',
+      'Create events that make an impact. Event strategy, planning, production and audience engagement built around what you need to achieve.',
     tagline: 'Event strategy, planning, production and audience engagement.',
     overview:
       'In-person experiences build emotional connections that digital channels can rarely match. We engineer memorable brand events.',
@@ -466,9 +464,9 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     heroLine2Prefix: 'Solve complex ',
     heroLine2AccentWord: 'challenges',
     heroLine2Suffix: ' with rigor.',
-    metaTitle: 'Marketing Consultancy Services | Mablab — Advisory & Audits',
+    metaTitle: 'Marketing Consulting | Strategy, Audits & Workshops | MAB Lab',
     metaDescription:
-      'Fractional CMO support, marketing strategy audits, team workshops, and strategic marketing leadership.',
+      'Get clearer priorities and make better marketing decisions. Strategy, audits, workshops and marketing leadership support for your business.',
     tagline: 'Strategy, audits, workshops and marketing leadership support.',
     overview:
       'Sometimes you don’t need more agency execution—you need expert guidance to make the right decisions.',

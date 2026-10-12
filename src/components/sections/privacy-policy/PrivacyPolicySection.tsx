@@ -1,9 +1,8 @@
 import React from 'react';
-import LetsTalkBanner from '@/components/sections/shared/LetsTalkBanner';
 
 export default function PrivacyPolicySection() {
   return (
-    <section className="bg-background-light pt-16 md:pt-[90px] pb-12 relative overflow-visible">
+    <section className="bg-background-light pt-16 md:pt-[90px] pb-24 md:pb-32 relative overflow-visible">
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
 
         {/* Header Badge */}
@@ -321,12 +320,6 @@ export default function PrivacyPolicySection() {
         </div>
 
       </div>
-
-      {/* LET'S TALK Banner Overlapping Footer */}
-      <LetsTalkBanner
-        heading="LET'S TALK!"
-        description="Ready to replace guesswork with strategic rigor? Let's build your scientific growth engine together."
-      />
     </section>
   );
 }

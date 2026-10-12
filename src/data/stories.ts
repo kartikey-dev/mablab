@@ -11,7 +11,7 @@ export const stories: Story[] = [
   {
     id: 'trendjacking',
     number: '01',
-    title: 'TRENDJACKING: WHEN IT WORKS, WHEN IT\'S JUST NOISE',
+    title: 'Trendjacking: When It Works, When It\'s Just Noise',
     description:
       'Exploring the fine line between cultural relevance and brand desperation in the age of viral cycles.',
     accentColor: '#5B21B6', // purple
@@ -20,7 +20,7 @@ export const stories: Story[] = [
   {
     id: 'good-copy',
     number: '02',
-    title: "GOOD COPY DOESN'T NEED AN EXCLAMATION POINT",
+    title: "Good Copy Doesn't Need an Exclamation Point",
     description:
       'The science of persuasive writing and why clarity always beats hype in high-stakes marketing.',
     accentColor: '#0891B2', // teal
@@ -29,7 +29,7 @@ export const stories: Story[] = [
   {
     id: 'rebrands-that-flop',
     number: '03',
-    title: 'WHAT NOBODY TELLS YOU ABOUT REBRANDS THAT FLOP',
+    title: 'What Nobody Tells You About Rebrands That Flop',
     description:
       'A post-mortem on famous branding failures and the laboratory lessons we can extract from them.',
     accentColor: '#E12A3C', // danger/orange-red
