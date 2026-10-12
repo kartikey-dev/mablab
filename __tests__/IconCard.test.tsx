@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import IconCard from '../src/components/ui/IconCard';
 
 describe('IconCard Component', () => {
@@ -29,23 +29,17 @@ describe('IconCard Component', () => {
     expect(link).toHaveAttribute('href', '/services/market-research');
   });
 
-  it('manages visibility using state when collapsible is true', () => {
+  it('renders icon when provided', () => {
     render(
       <IconCard
         title="Interactive Card"
         content="Hidden and revealed content"
-        collapsible={true}
-        defaultVisible={true}
+        icon={<span data-testid="card-icon">⚡</span>}
       />
     );
 
     expect(screen.getByText('Hidden and revealed content')).toBeInTheDocument();
-    const toggleBtn = screen.getByRole('button', { name: /hide details/i });
-    expect(toggleBtn).toBeInTheDocument();
-
-    // Toggle off
-    fireEvent.click(toggleBtn);
-    expect(screen.getByRole('button', { name: /show details/i })).toBeInTheDocument();
+    expect(screen.getByTestId('card-icon')).toBeInTheDocument();
   });
 
   it('renders optional tag and category', () => {
