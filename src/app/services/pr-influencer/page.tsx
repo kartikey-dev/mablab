@@ -62,42 +62,42 @@ const accentColorMap: Record<string, string> = {
 
 const services = [
   {
-    title: 'PR STRATEGY',
+    title: 'PR Strategy',
     bullets: ['Narratives', 'Messaging', 'Story', 'Development'],
     highlight: false,
   },
   {
-    title: 'MEDIA RELATIONS',
+    title: 'Media Relations',
     bullets: ['Journalists', 'Publications', 'Industry Media'],
     highlight: false,
   },
   {
-    title: 'THOUGHT LEADERSHIP',
+    title: 'Thought Leadership',
     bullets: ['Point Of View', 'Development', 'Expert Commentary', 'Bylines'],
     highlight: false,
   },
   {
-    title: 'FOUNDER & EXECUTIVE PR',
+    title: 'Founder & Executive PR',
     bullets: ['Executive Visibility', 'Speaking', 'Opportunities', 'Positioning'],
     highlight: false,
   },
   {
-    title: 'INFLUENCER STRATEGY',
+    title: 'Influencer Strategy',
     bullets: ['Creator Selection', 'Campaign', 'Planning', 'Partnerships'],
     highlight: false,
   },
   {
-    title: 'CREATOR PARTNERSHIPS',
+    title: 'Creator Partnerships',
     bullets: ['Influencers', 'Experts', 'Industry', 'Voices'],
     highlight: true,
   },
   {
-    title: 'CAMPAIGNS',
+    title: 'Campaigns',
     bullets: ['Launches', 'Announcements', 'Initiatives'],
     highlight: true,
   },
   {
-    title: 'OUTREACH & RELATIONSHIP BUILDING',
+    title: 'Outreach & Relationship Building',
     bullets: ['Media', 'Creators', 'Communities'],
     highlight: true,
   },
@@ -127,25 +127,21 @@ const mediaLogos = [
 
 const caseStudies = [
   {
-    num: '01',
     numColor: 'bg-secondary',
     title: 'Founder Visibility Initiative',
     body: 'Built thought leadership for a fintech founder, leading to 25+ media features and speaking opportunities.',
   },
   {
-    num: '02',
     numColor: 'bg-danger',
     title: 'Product Launch Campaign',
     body: '360° PR campaign for a B2B SaaS platform resulting in strong industry coverage and market buzz.',
   },
   {
-    num: '03',
     numColor: 'bg-primary',
     title: 'Research & Thought Leadership',
     body: 'Positioned a research report with top-tier media placements and industry conversations.',
   },
   {
-    num: '04',
     numColor: 'bg-stroke',
     title: 'Influencer Collaboration',
     body: 'Ran creator-led campaigns that drove awareness, trust and engagement at scale.',
@@ -171,6 +167,7 @@ export default function PrInfluencerPage() {
             companies.
           </>
         }
+        fullwidth
       />
 
       {/* ============================================
@@ -228,38 +225,36 @@ export default function PrInfluencerPage() {
             </SectionHeading>
           </div>
 
-          <div className="border-2 border-stroke overflow-hidden">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-              {services.map((svc) => (
-                <div
-                  key={svc.title}
-                  className={`border-b border-r border-stroke/30 px-6 py-5 flex flex-col gap-3 last:border-r-0 ${svc.highlight ? 'bg-primary' : 'bg-white'
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((svc) => (
+              <div
+                key={svc.title}
+                className={`border-2 border-stroke p-6 flex flex-col gap-3 comic-shadow ${svc.highlight ? 'bg-primary' : 'bg-white'
+                  }`}
+              >
+                <h3
+                  className={`para-24 font-extrabold tracking-wider ${svc.highlight ? 'text-white' : 'text-stroke'
                     }`}
                 >
-                  <h3
-                    className={`para-12 font-extrabold uppercase tracking-wider ${svc.highlight ? 'text-white' : 'text-stroke'
-                      }`}
-                  >
-                    {svc.title}
-                  </h3>
-                  <ul className="space-y-1.5">
-                    {svc.bullets.map((b) => (
-                      <li
-                        key={b}
-                        className={`para-14 font-normal flex items-center gap-1.5 ${svc.highlight ? 'text-white/80' : 'text-gray-600'
+                  {svc.title}
+                </h3>
+                <ul className="space-y-1.5">
+                  {svc.bullets.map((b) => (
+                    <li
+                      key={b}
+                      className={`para-14 font-normal flex items-center gap-1.5 ${svc.highlight ? 'text-white/80' : 'text-gray-600'
+                        }`}
+                    >
+                      <span
+                        className={`w-1 h-1 rounded-full shrink-0 ${svc.highlight ? 'bg-white/60' : 'bg-stroke'
                           }`}
-                      >
-                        <span
-                          className={`w-1 h-1 rounded-full shrink-0 ${svc.highlight ? 'bg-white/60' : 'bg-stroke'
-                            }`}
-                        />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+                      />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -313,12 +308,11 @@ export default function PrInfluencerPage() {
 
           {/* Case study cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {caseStudies.map((cs) => (
+            {caseStudies.map((cs, idx) => (
               <div
-                key={cs.num}
+                key={idx}
                 className="border-2 border-stroke comic-shadow bg-white p-6 flex flex-col gap-3 relative"
               >
-                <span className={`text-white border border-stroke font-extrabold para-12 p-1 inline-block absolute -top-1.5 -left-1 ${cs.numColor}`}>{cs.num}</span>
                 <h3 className="para-18 font-extrabold text-stroke leading-snug">{cs.title}</h3>
                 <p className="para-14 text-gray-600 font-normal leading-relaxed">{cs.body}</p>
               </div>

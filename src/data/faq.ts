@@ -302,9 +302,229 @@ export const webFaqItems: FaqItem[] = [
   },
 ];
 
+export const designFaqItems: FaqItem[] = [
+  {
+    id: 'design-faq-1',
+    question: 'Do we need design if we already have a brand identity?',
+    answer:
+      'Not necessarily. But if your existing brand isn’t being translated well across presentations, campaigns, social media, websites, or other touchpoints, design can help bring the brand to life more consistently.',
+  },
+  {
+    id: 'design-faq-2',
+    question: 'Our business is good. Our design just doesn’t reflect it. Can you help?',
+    answer:
+      'Yes. That’s exactly the kind of problem good design should solve. We can help close the gap between the quality of your business and how it looks to the outside world.',
+  },
+  {
+    id: 'design-faq-3',
+    question: 'Can you work with our existing brand instead of redesigning everything?',
+    answer:
+      'Yes. Not every design problem requires a rebrand. We can work within your existing identity and improve how it is applied, extended, or executed.',
+  },
+  {
+    id: 'design-faq-4',
+    question: "We have good ideas, but they don't look good when executed. Can you help?",
+    answer:
+      'Yes. We can turn ideas into clear, considered visual communication—from individual assets to complete design systems.',
+  },
+  {
+    id: 'design-faq-5',
+    question: 'Can you design for a new initiative or product?',
+    answer:
+      'Yes. Whether it needs a visual identity, campaign design, launch assets, or a complete set of brand touchpoints, we can build what the initiative needs.',
+  },
+  {
+    id: 'design-faq-6',
+    question: 'Will you only make things look better, or will you think about the strategy too?',
+    answer:
+      "Both. Good design isn't decoration. We look at what needs to be communicated, who needs to understand it, and what the design needs to achieve.",
+  },
+  {
+    id: 'design-faq-7',
+    question: "Can you help if we don't have a designer in-house?",
+    answer:
+      'Yes. We can work as an extension of your team when you need ongoing design support or bring us in for a specific project.',
+  },
+  {
+    id: 'design-faq-8',
+    question: 'Can you work with our existing team or agency?',
+    answer:
+      'Yes. We can collaborate with internal teams, marketers, developers, and other partners when the work requires it.',
+  },
+];
 
+export const marketingConsultancyFaqItems: FaqItem[] = [
+  {
+    id: 'consultancy-faq-1',
+    question: 'We already have a marketing team. Why would we need a consultant?',
+    answer:
+      'You may not need one. But if your team is too close to the problem, lacks a clear direction, or needs an outside perspective to make better decisions, an independent strategic view can help.',
+  },
+  {
+    id: 'consultancy-faq-2',
+    question: "We know we need to do better at marketing, but we don't know where to start. Can you help?",
+    answer:
+      "Yes. We can help you understand what is working, what isn't, where the biggest gaps are, and what deserves attention first.",
+  },
+  {
+    id: 'consultancy-faq-3',
+    question: "Can you tell us what we're doing wrong?",
+    answer:
+      "Yes—but we’d rather understand why it isn't working first. We look at the context behind your marketing decisions before recommending what should change.",
+  },
+  {
+    id: 'consultancy-faq-4',
+    question: 'We’ve tried marketing before and it didn’t work. Can you help us figure out why?',
+    answer:
+      "That’s often where consultancy is most useful. Instead of jumping into another tactic, we can examine the assumptions, strategy, positioning, execution, and systems behind what you've already tried.",
+  },
+  {
+    id: 'consultancy-faq-5',
+    question: 'Do you only give recommendations, or can you help us implement them?',
+    answer:
+      'It depends on what you need. Consultancy can focus on strategy and decision-making, or it can connect directly with the wider work MAB Lab does across marketing, branding, content, digital, and other areas.',
+  },
+  {
+    id: 'consultancy-faq-6',
+    question: "What if we don't know exactly what we need?",
+    answer:
+      "That’s okay. You don't need to arrive with a perfectly defined brief. If you know something isn't working—or that you need to make an important marketing decision—we can start there.",
+  },
+  {
+    id: 'consultancy-faq-7',
+    question: 'Can you work with our existing marketing agency or team?',
+    answer:
+      "Yes. We don't need to replace the people already working on your marketing. We can provide the strategic clarity they need to execute better.",
+  },
+  {
+    id: 'consultancy-faq-8',
+    question: 'Is marketing consultancy only for businesses with large marketing budgets?',
+    answer:
+      "No. The value of consultancy isn't about the size of the budget. It's about making better decisions with the resources you already have.",
+  },
+  {
+    id: 'consultancy-faq-9',
+    question: 'How do we know if consultancy is what we actually need?',
+    answer:
+      "If you're facing an important marketing decision, struggling to understand what's working, or spending money without enough confidence in where it's going, a conversation can help determine whether consultancy is the right fit.",
+  },
+];
 
+export const videoPodcastFaqItems: FaqItem[] = [
+  {
+    id: 'video-faq-1',
+    question: "We've never created video content before. Is that a problem?",
+    answer:
+      'Not at all. Many of our clients start with little or no experience. We guide the process from concept to final production.',
+  },
+  {
+    id: 'video-faq-2',
+    question: 'Do we need expensive equipment?',
+    answer:
+      'No. Great content is driven by strong stories and clear communication, not just equipment.',
+  },
+  {
+    id: 'video-faq-3',
+    question: 'What kind of content should we create?',
+    answer:
+      "That depends on your audience and goals. We'll help identify the formats that make the most sense for your business.",
+  },
+  {
+    id: 'video-faq-4',
+    question: 'Can one recording session create multiple pieces of content?',
+    answer:
+      'Absolutely. We help maximize the value of every recording through repurposing and distribution.',
+  },
+  {
+    id: 'video-faq-5',
+    question: 'Will video content help our brand grow?',
+    answer:
+      'Video is one of the most effective ways to build trust, communicate expertise, and engage audiences.',
+  },
+  {
+    id: 'video-faq-6',
+    question: 'How much time will this require from us?',
+    answer:
+      'We aim to make the process efficient so you can focus on your business.',
+  },
+];
 
+export const eventsFaqItems: FaqItem[] = [
+  {
+    id: 'events-faq-1',
+    question: 'Why should we invest in events?',
+    answer:
+      'Events create opportunities for engagement, relationship building, brand visibility, and business growth.',
+  },
+  {
+    id: 'events-faq-2',
+    question: 'Can you manage everything from start to finish?',
+    answer:
+      'Yes. We can handle planning, coordination, production, and execution.',
+  },
+  {
+    id: 'events-faq-3',
+    question: 'What types of events do you specialize in?',
+    answer:
+      'We support everything from product launches and conferences to webinars and community events.',
+  },
+  {
+    id: 'events-faq-4',
+    question: 'How do you ensure an event runs smoothly?',
+    answer:
+      'Detailed planning, clear communication, and strong execution are at the core of every event.',
+  },
+  {
+    id: 'events-faq-5',
+    question: 'Can events generate business results?',
+    answer:
+      'Absolutely. Well-executed events can drive awareness, leads, partnerships, and customer engagement.',
+  },
+  {
+    id: 'events-faq-6',
+    question: 'What happens after the event?',
+    answer:
+      'We help measure outcomes, gather insights, and identify opportunities for future improvements.',
+  },
+];
 
+export const marketResearchFaqItems: FaqItem[] = [
+  {
+    id: 'research-faq-1',
+    question: 'Why do we need research before making a decision?',
+    answer:
+      'Research reduces guesswork and helps you make decisions based on evidence rather than assumptions.',
+  },
+  {
+    id: 'research-faq-2',
+    question: 'Can research help us understand our customers better?',
+    answer:
+      'Yes. Customer insights are often one of the most valuable outcomes of a research project.',
+  },
+  {
+    id: 'research-faq-3',
+    question: 'How do you gather information?',
+    answer:
+      'Depending on the project, we use a combination of customer feedback, competitor analysis, industry data, and market insights.',
+  },
+  {
+    id: 'research-faq-4',
+    question: 'Will the findings be easy to understand?',
+    answer:
+      'Absolutely. We focus on actionable insights, not overwhelming amounts of data.',
+  },
+  {
+    id: 'research-faq-5',
+    question: 'Can research help validate a new idea?',
+    answer:
+      'Yes. Research can identify opportunities, risks, and market demand before significant investments are made.',
+  },
+  {
+    id: 'research-faq-6',
+    question: 'What happens after the research is complete?',
+    answer:
+      'We help translate findings into practical recommendations and next steps.',
+  },
+];
 
 

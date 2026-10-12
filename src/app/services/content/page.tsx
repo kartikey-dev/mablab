@@ -24,9 +24,26 @@ export default function ContentServicePage() {
         line1="The internet isn't running out of content."
         line2={
           <>
-            <span className="text-cyan-400">It&apos;s running out of</span> ideas worth listening to.
+            <span className="relative text-cyan-400 inline-block">
+              It&apos;s running out of
+              <svg
+                className="absolute -bottom-2.5 left-0 w-full h-3.5 text-cyan-400"
+                viewBox="0 0 240 16"
+                fill="none"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M 2 8 Q 120 18 238 6"
+                  stroke="currentColor"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span> ideas worth listening to.
           </>
         }
+        fullwidth
       />
 
       {/* ============================================
@@ -181,7 +198,7 @@ export default function ContentServicePage() {
             {[
               {
                 step: 'STEP 01',
-                title: 'DISCOVER',
+                title: 'Discover',
                 questions: [
                   'What do we know?',
                   'What does the audience care about?',
@@ -192,7 +209,7 @@ export default function ContentServicePage() {
               },
               {
                 step: 'STEP 02',
-                title: 'DEVELOP',
+                title: 'Develop',
                 questions: [
                   'Find the angle.',
                   'Shape the argument.',
@@ -203,28 +220,28 @@ export default function ContentServicePage() {
               },
               {
                 step: 'STEP 03',
-                title: 'WRITE',
+                title: 'Write',
                 quote: 'Turn ideas into stories, insights and opinions.',
                 footer: 'EXECUTION: VERBAL CLARITY',
                 color: 'bg-stroke',
               },
               {
                 step: 'STEP 04',
-                title: 'PACKAGE',
+                title: 'Package',
                 quote: 'Adapt the idea for different formats, audiences and channels.',
                 footer: 'ASSEMBLY: MULTI-CHANNEL',
                 color: 'bg-purple-700',
               },
               {
                 step: 'STEP 05',
-                title: 'DISTRIBUTE',
+                title: 'Distribute',
                 quote: 'Help the right people discover it.',
                 footer: 'REACH: INTENTIONAL TARGETING',
                 color: 'bg-cyan-600',
               },
               {
                 step: 'STEP 06',
-                title: 'LEARN',
+                title: 'Learn',
                 questions: [
                   'Understand what resonates.',
                   'Refine the thinking.',
@@ -242,7 +259,7 @@ export default function ContentServicePage() {
                   <span className={`${card.color} text-white font-extrabold text-xs px-2.5 py-1 inline-block mb-3`}>
                     {card.step}
                   </span>
-                  <h3 className="para-24 font-extrabold text-stroke mb-3">
+                  <h3 className="para-24 font-extrabold capitalize text-stroke mb-3">
                     {card.title}
                   </h3>
                   {card.questions && (
@@ -260,11 +277,10 @@ export default function ContentServicePage() {
                     </p>
                   )}
                 </div>
-                <div className="border-t border-dashed border-stroke pt-3 flex items-center justify-between">
+                <div className="border-t border-dashed border-stroke pt-3">
                   <span className="text-[11px] font-extrabold text-stroke uppercase tracking-wider">
                     {card.footer}
                   </span>
-                  <span className="text-stroke font-bold text-xs">→</span>
                 </div>
               </div>
             ))}

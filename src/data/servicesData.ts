@@ -458,15 +458,15 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
     whyItMatters:
       'Live events turn passive observers into active brand advocates and long-term business partners.',
   },
-  'marketing-consulting': {
-    id: 'marketing-consulting',
-    name: 'Marketing Consulting',
-    badgeText: 'MARKETING CONSULTING',
+  'marketing-consultancy': {
+    id: 'marketing-consultancy',
+    name: 'Marketing Consultancy',
+    badgeText: 'MARKETING CONSULTANCY',
     heroLine1: 'Strategic clarity & leadership.',
     heroLine2Prefix: 'Solve complex ',
     heroLine2AccentWord: 'challenges',
     heroLine2Suffix: ' with rigor.',
-    metaTitle: 'Marketing Consulting Services | Mablab — Advisory & Audits',
+    metaTitle: 'Marketing Consultancy Services | Mablab — Advisory & Audits',
     metaDescription:
       'Fractional CMO support, marketing strategy audits, team workshops, and strategic marketing leadership.',
     tagline: 'Strategy, audits, workshops and marketing leadership support.',
@@ -498,3 +498,5 @@ export const servicesDataMap: Record<string, ServiceDetailData> = {
       'Having an experienced advisor prevents costly trial-and-error mistakes when scaling your company.',
   },
 };
+
+servicesDataMap['marketing-consulting'] = servicesDataMap['marketing-consultancy'];

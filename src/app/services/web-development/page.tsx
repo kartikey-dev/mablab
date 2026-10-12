@@ -151,7 +151,7 @@ const whyMabLab = [
   {
     num: '04',
     numColor: 'bg-stroke',
-    title: 'Ongoing Partnership',
+    title: 'Beyond Launch',
     body: 'We stay involved long after the website goes live.',
   },
 ];
@@ -166,28 +166,42 @@ export default function WebDevelopmentPage() {
           ============================================ */}
       <ServiceHero
         badgeText="WEB DEVELOPMENT"
-        line1="Make every"
-        line2={
+        line1={
           <>
-            <span className="text-cyan-400 underline decoration-cyan-400 decoration-4">
+            Make every&nbsp;
+            <span className="relative text-cyan-400 inline-block">
               visit count
+              <svg
+                className="absolute -bottom-2.5 left-0 w-full h-3.5 text-cyan-400"
+                viewBox="0 0 240 16"
+                fill="none"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M 2 8 Q 120 18 238 6"
+                  stroke="currentColor"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
             </span>
             .
           </>
         }
+        line2={
+          <>
+            <span className="para-18 text-white/90 block mt-6 mx-auto">
+              Designed to build trust. Built to drive action.
+            </span>
+          </>
+        }
       />
-
-      {/* Hero subtitle strip */}
-      <div className="bg-primary py-4 border-t border-white/10">
-        <p className="text-center text-white/80 font-medium text-base tracking-wide">
-          Designed to build trust. Built to drive action.
-        </p>
-      </div>
 
       {/* ============================================
           SECTION 2: WHAT DOES YOUR WEBSITE NEED?
           ============================================ */}
-      <section className="bg-background-light py-16 md:py-[90px]">
+      <section className="bg-white py-16 md:py-[90px]">
         <div className="container mx-auto px-4 md:px-8">
           <SectionHeading
             text="What Does Your"
@@ -226,7 +240,7 @@ export default function WebDevelopmentPage() {
       {/* ============================================
           SECTION 3: WHAT WE DO — 2×4 GRID
           ============================================ */}
-      <section className="bg-background-light py-16 md:py-[90px] border-t border-stroke/10">
+      <section className="bg-background-light py-16 md:py-[90px]">
         <div className="container mx-auto px-4 md:px-8">
           <SectionHeading
             text="What We"
@@ -278,7 +292,7 @@ export default function WebDevelopmentPage() {
             {builtToPerform.map((card) => (
               <div
                 key={card.title}
-                className="bg-background-light border-2 border-stroke comic-shadow p-6 flex flex-col gap-3"
+                className="border-2 border-stroke comic-shadow p-6 flex flex-col gap-3"
               >
                 <div className="text-danger">
                   <IconComponent name={card.icon} className="w-7 h-7 text-danger" />
@@ -333,18 +347,13 @@ export default function WebDevelopmentPage() {
           />
 
           {/* 2×2 numbered reasons */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 border-2 border-stroke mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {whyMabLab.map((item) => (
               <div
                 key={item.num}
-                className="border border-stroke/30 p-6 flex flex-col gap-2 relative"
+                className="border-2 border-stroke comic-shadow p-6 flex flex-col gap-2 relative"
               >
-                <span
-                  className={`absolute top-0 left-0 ${item.numColor} text-white para-12 font-extrabold px-2 py-0.5`}
-                >
-                  {item.num}
-                </span>
-                <h3 className="para-18 font-extrabold text-stroke mt-5">{item.title}</h3>
+                <h3 className="para-18 font-extrabold text-stroke">{item.title}</h3>
                 <p className="para-14 text-gray-500 font-normal leading-relaxed">{item.body}</p>
               </div>
             ))}

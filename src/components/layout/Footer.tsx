@@ -19,7 +19,7 @@ const servicesCol2 = [
   { name: 'Design', href: '/services/design' },
   { name: 'Market Research', href: '/services/market-research' },
   { name: 'Events', href: '/services/events' },
-  { name: 'Marketing Consulting', href: '/services/marketing-consulting' },
+  { name: 'Marketing Consultancy', href: '/services/marketing-consultancy' },
 ];
 
 export default function Footer() {

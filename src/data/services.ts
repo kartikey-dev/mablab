@@ -73,8 +73,8 @@ export const services: Service[] = [
     description: 'Event strategy, planning, production and audience engagement.',
   },
   {
-    id: 'marketing-consulting',
-    name: 'Marketing Consulting',
+    id: 'marketing-consultancy',
+    name: 'Marketing Consultancy',
     icon: 'marketing-consulting',
     description: 'Strategy, audits, workshops and marketing leadership support.',
   },

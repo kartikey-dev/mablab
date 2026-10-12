@@ -6,6 +6,7 @@ export interface ServiceHeroProps {
   line2: React.ReactNode;
   badgeColor?: string;
   className?: string;
+  fullwidth?: boolean
 }
 
 export default function ServiceHero({
@@ -14,6 +15,7 @@ export default function ServiceHero({
   line2,
   badgeColor = 'bg-cyan-400',
   className = '',
+  fullwidth
 }: ServiceHeroProps) {
   return (
     <section className={`bg-primary py-20 md:py-32 relative overflow-hidden flex items-center justify-center min-h-[360px] md:min-h-[440px] ${className}`}>
@@ -29,7 +31,7 @@ export default function ServiceHero({
         </div>
 
         {/* Hero Title */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white tracking-tight leading-[1.12] mx-auto max-w-5xl break-words">
+        <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white tracking-tight leading-[1.12] mx-auto break-words ${fullwidth ? "" : "max-w-5xl"}`}>
           <div>{line1}</div>
           <div className="mt-2 md:mt-3">{line2}</div>
         </h1>

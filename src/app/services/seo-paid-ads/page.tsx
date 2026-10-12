@@ -20,12 +20,30 @@ export default function SeoPaidAdsServicePage() {
           ============================================ */}
       <ServiceHero
         badgeText="PAID ADS & SEO"
-        line1="If the right people"
-        line2={
+        line1={
           <>
-            <span className="text-cyan-400">can&apos;t find you,</span> they can&apos;t choose you.
+            If the right people&nbsp;
+            <span className="relative text-cyan-400 inline-block">
+              can&apos;t find you,
+              <svg
+                className="absolute -bottom-2.5 left-0 w-full h-3.5 text-cyan-400"
+                viewBox="0 0 240 16"
+                fill="none"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M 2 8 Q 120 18 238 6"
+                  stroke="currentColor"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span>
           </>
         }
+        line2="they can&apos;t choose you."
+        fullwidth
       />
 
       {/* ============================================
@@ -230,7 +248,7 @@ export default function SeoPaidAdsServicePage() {
                 className="bg-white border-2 border-stroke comic-shadow-sm p-4 relative flex flex-col justify-between"
               >
                 <div>
-                  <span className="bg-danger text-white border border-stroke font-extrabold text-[10px] p-1 inline-block absolute -top-1.5 -left-1">
+                  <span className="bg-danger text-white border border-stroke font-extrabold text-[10px] p-1 inline-block absolute -top-2 -left-1">
                     {item.step}
                   </span>
                   <p className="para-14 font-extrabold text-stroke leading-snug">
@@ -241,38 +259,7 @@ export default function SeoPaidAdsServicePage() {
             ))}
           </div>
 
-          {/* Center Highlight Banner Box */}
-          <div className="bg-white border-2 border-stroke comic-shadow p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden min-h-[160px]">
-            <div className="relative z-10">
-              <h3 className="heading-h3 text-stroke leading-tight normal-case md:max-w-md sm:max-w-3/4">
-                The goal isn&apos;t more traffic. The goal is understanding{' '}
-                <span className="text-purple-700">
-                  what creates demand.
-                </span>
-              </h3>
-            </div>
-            <Image
-              src="/images/logo.svg"
-              alt="Mablab Logo"
-              width={282}
-              height={282}
-              className="w-[282px] h-[282px] absolute -right-8 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none object-contain z-0"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================
-          SECTION 4: METRICS WE PAY ATTENTION TO
-          ============================================ */}
-      <section className="bg-[#D0DBED]/10 py-16 md:py-[90px]">
-        <div className="container mx-auto px-4 md:px-8">
-          <SectionHeading
-            text="Metrics We"
-            accentText="Pay Attention To"
-            accentColor="primary"
-            className="mb-12 capitalize"
-          />
+          <h4 className='para-24 mb-8'>Metrics We Pay Attention To</h4>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[

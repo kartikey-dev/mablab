@@ -5,6 +5,7 @@ import IconComponent from '@/components/ui/IconComponent';
 import FaqSection from '@/components/sections/home/FaqSection';
 import { socialMediaFaqItems } from '@/data/faq';
 import { Metadata } from 'next';
+import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'Social Media Services | Mablab — Grab attention. Create connection.',
@@ -23,7 +24,23 @@ export default function SocialMediaServicePage() {
         line1="Grab attention."
         line2={
           <>
-            Create <span className="text-cyan-400">connection.</span>
+            Create <span className="relative text-cyan-400 inline-block">
+              connection.
+              <svg
+                className="absolute -bottom-2.5 left-0 w-full h-3.5 text-cyan-400"
+                viewBox="0 0 240 16"
+                fill="none"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M 2 8 Q 120 18 238 6"
+                  stroke="currentColor"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </span>
           </>
         }
       />
@@ -102,16 +119,19 @@ export default function SocialMediaServicePage() {
                 icon: 'chart',
                 title: 'Social Strategy',
                 bullets: ['Audit & Benchmarking', 'Channel Architecture', 'KPI Frameworks'],
+                showButton: false
               },
               {
                 icon: 'nodes',
                 title: 'Platform Strategy',
                 bullets: ['Algorithm Optimization', 'Feature Adoption', 'Platform-Specific Playbooks'],
+                showButton: false
               },
               {
                 icon: 'box',
                 title: 'Content Strategy',
                 bullets: ['Content Pillars', 'Narrative Arcs', 'Distribution Planning'],
+                showButton: false
               },
               {
                 icon: 'pen',
@@ -121,27 +141,32 @@ export default function SocialMediaServicePage() {
                   'High-Impact Short-Form Video',
                   'Conversion-Led Copywriting',
                 ],
+                showButton: false
               },
               {
                 icon: 'star',
                 title: 'Founder / Executive Social',
                 bullets: ['Personal Branding', 'Thought Leadership', 'Ghostwriting'],
+                showButton: false
               },
               {
                 icon: 'chat',
                 title: 'Community Management',
                 bullets: ['Active Engagement', 'Crisis Management', 'Sentiment Analysis'],
+                showButton: false
               },
               {
                 icon: 'megaphone',
                 title: 'Social Campaigns',
                 bullets: ['Product Launches', 'Influencer Integration', 'Paid Social Amplification'],
+                showButton: false
               },
               {
-                icon: 'target',
-                title: 'Performance & Paid Social',
-                bullets: ['Funnel Architecture', 'A/B Creative Testing', 'ROAS Optimization'],
-                span: 'lg:col-span-2',
+                icon: '',
+                title: 'Need custom approach?',
+                bullets: [],
+                span: 'lg:col-span-2 text-center items-center justify-center',
+                showButton: true,
               },
             ].map((card) => (
               <div
@@ -149,25 +174,26 @@ export default function SocialMediaServicePage() {
                 className={`bg-white border-2 border-stroke comic-shadow p-6 flex flex-col justify-between ${card.span ? card.span : ''
                   }`}
               >
-                <div>
-                  <div className="text-red-500 mb-4">
-                    <IconComponent name={card.icon} className="w-8 h-8 text-red-500" />
-                  </div>
-                  <h3 className="para-24 font-extrabold text-stroke mb-4">
-                    {card.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {card.bullets.map((bullet) => (
-                      <li
-                        key={bullet}
-                        className="para-14 text-gray-600 font-normal flex items-center gap-2"
-                      >
-                        <span className="w-1.5 h-1.5 bg-stroke rounded-full inline-block" />
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                <div className={`text-red-500 mb-4 ${card.span ? "hidden" : ""}`}>
+                  <IconComponent name={card.icon} className="w-8 h-8 text-red-500" />
                 </div>
+                <h3 className={`para-24 font-extrabold mb-4 ${card.span ? "text-primary" : "text-stroke"}`}>
+                  {card.title}
+                </h3>
+                <ul className={card.span ? "hidden" : "space-y-2"}>
+                  {card.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="para-14 text-gray-600 font-normal flex items-center gap-2"
+                    >
+                      <span className="w-1.5 h-1.5 bg-stroke rounded-full inline-block" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                {card.showButton && <Button href="/contact" variant="secondary" size="md">
+                  Let&apos;s Talk!
+                </Button>}
               </div>
             ))}
           </div>
@@ -216,7 +242,7 @@ export default function SocialMediaServicePage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="bg-[#F8FAFC] border-2 border-stroke comic-shadow p-5 flex flex-col justify-between"
+                className="border-2 border-stroke comic-shadow p-5 flex flex-col justify-between"
               >
                 <div>
                   <span className="text-red-500 font-black text-sm tracking-wider uppercase block mb-2">
